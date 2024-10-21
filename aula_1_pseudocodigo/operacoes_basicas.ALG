@@ -34,7 +34,7 @@ resultado <- v1 * v2
 escreval("resultado da multiplicação: ", resultado)
 
 resultado <- v1 / v2
-escreval ("resultado da divisão: ", resultado:2:2)
+escreval ("resultado da divisão: ", resultado:2:2)   //utiliza 2:2 para ajustar o resultado final
 
 resultado <- v1 ^ v2
 escreval("resultado da potência: ", resultado)
