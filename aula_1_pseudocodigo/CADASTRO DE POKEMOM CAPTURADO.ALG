@@ -4,7 +4,7 @@ algoritmo "Cadastro de Pokemom capturado"
 // Função: Cadastrar
 var
 nome, poder, cidade, sexo, endereco: caracter
-level: inteiro
+level: caracter
 id : caracter   //podemos usar, desde que não fassamos calculos
 
 inicio
@@ -12,7 +12,7 @@ inicio
 escreval ("## Cadastro de Pokemom ##")
 escreva (" Digite o nome do pokemom:  ")
 leia (nome)
-limpatela
+limpatela   //limpatela: informação fica oculta na tela
 
 escreval (" Digite o poder do pokemom: ")
 leia (poder)
@@ -36,7 +36,8 @@ leia(id)
 
 escreval ("#########################################")
 escreval ("## dados informados pelo usuario ##")
-escreval ("nome e poder: ",nome," ",poder,".")
+escreval ("nome: ",nome)
+escreval ("poder: ",poder)
 escreval ("level: ",level)
 escreval ("endereco: ",endereco,", cidade: ",cidade)
 escreval("id:",id)
