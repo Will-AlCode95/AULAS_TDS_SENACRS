@@ -11,7 +11,7 @@ Var
 Inicio
 
 // Seção de Comandos, procedimento, funções, operadores, etc... 
-   jurosAtraso <- 0,02
+    jurosAtraso <- 0.02
 
    escreval("Informe o valor da dívida: R$ ")
    leia(valorDivida)

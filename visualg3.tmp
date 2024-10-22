@@ -11,7 +11,7 @@ Var
 Inicio
 
 // Seção de Comandos, procedimento, funções, operadores, etc... 
-jurosAtraso <- 0,02
+   //jurosAtraso <- 0,02
 
    escreval("Informe o valor da dívida: R$ ")
    leia(valorDivida)
@@ -19,10 +19,10 @@ jurosAtraso <- 0,02
    leia(diasAtrasado)
 
 // Calcula os juros a 2% por dia
-    jurosAtraso <- valorDivida * 0.02 * diasAtrasado
+    jurosAtraso <- valorDivida * 0.02 * diasAtrasado //exemplo:100+0,02%+30=60
 
 // Calcula o total a ser pago
-    valorFinal <- valorDivida + jurosAtraso
+    valorFinal <- valorDivida + jurosAtraso  //100+60 = 160
 
 // Exibe os resultados
     escreval("Valor da dívida: R$ ", valorDivida:3:2)
