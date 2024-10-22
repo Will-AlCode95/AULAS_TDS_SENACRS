@@ -21,9 +21,9 @@ leia(precoFabrica)
 imposto <- 0.45
 revendedor <- 0.28
 
-revendedor <- precoFabrica * revendedor
-imposto <- precoFabrica * imposto
-precoFinal <- precoFabrica + revendedor + imposto
+revendedor <- precoFabrica * revendedor  //exemplo: R$10.000 x 0,28%
+imposto <- precoFabrica * imposto        //exemplo: R$10.000 x 0,45%
+precoFinal <- precoFabrica + revendedor + imposto //10.000+2.800+4.500= 17,300
 
 escreval("nome do video-game: ", nome)
 escreval("valor do video-game na fábrica: R$ ", precoFabrica:2:3)
