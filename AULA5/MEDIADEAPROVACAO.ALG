@@ -6,7 +6,7 @@ Algoritmo "AprovadoOuReprovado"
 // Data atual  : 24/10/2024
 Var
  nomeAluno, nomeTurma: caracter
- nota1, nota2, nota3, nota4, nota5: inteiro
+ nota1, nota2, nota3, nota4, nota5: real
  media:real
 
 
@@ -41,16 +41,19 @@ leia(nota5)
    escreval("5ª Avaliação: ", nota5)
    escreval("-----------------------------")
 
-//CAUCULA A MÉDIA
+//Caucula a média
 media <- (nota1+nota2+nota3+nota4+nota5) / 5
 
 escreval ("Média Final: ", media, "%")
 
+//if else
 escreva("Situação Curricular: ")
 se media >= 70 entao
     escreval("APROVADO")
  senao
-   se media < 70 entao
+   se media >= 60 entao
+   escreval("RECUPERAÇÃO")
+ senao
    escreval("REPROVADO")
    fimse
 fimse
