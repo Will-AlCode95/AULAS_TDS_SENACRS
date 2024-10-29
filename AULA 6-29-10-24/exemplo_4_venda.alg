@@ -1,4 +1,6 @@
 algoritmo "Empresa de Vendas"
+// Disciplina   : [Linguagem e Lógica de Programação] 
+// Professor   : Antonio Carlos Nicolodi 
 // Função :
 var
 comissao, venda: real
