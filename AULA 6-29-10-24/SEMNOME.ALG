@@ -1,0 +1,31 @@
+Algoritmo "Comissão de venda do Corretor"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi 
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 29/10/2024
+Var
+// Seção de Declarações das variáveis 
+comissaoVenda,nome: caracter
+valorImovel: real
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+escreva("digite o nome do corretor: ")
+leia(nome)
+escreva("digite o valor do imóvel: ")
+leia(valorImovel)
+
+se (valorImovel => 50.000) entao
+escreval("20% de comissão")
+senao (valorImovel => 30.000) entao
+escreval("15% de comissao")
+se (valorImovel < 30.000 ) entao
+escreval("10% de comissao")
+fimse
+
+
+escreval("=======dados=======")
+
+
+Fimalgoritmo
