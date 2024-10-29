@@ -6,26 +6,29 @@ Algoritmo "Comissão de venda do Corretor"
 // Data atual  : 29/10/2024
 Var
 // Seção de Declarações das variáveis 
-comissaoVenda,nome: caracter
-valorImovel: real
+comissao,venda: real
+nome: caracter
 
 Inicio
 // Seção de Comandos, procedimento, funções, operadores, etc... 
 escreva("digite o nome do corretor: ")
 leia(nome)
 escreva("digite o valor do imóvel: ")
-leia(valorImovel)
+leia(venda)
 
-se (valorImovel => 50.000) entao
-escreval("20% de comissão")
-senao (valorImovel => 30.000) entao
-escreval("15% de comissao")
-se (valorImovel < 30.000 ) entao
-escreval("10% de comissao")
+se (venda >= 50000) entao
+   comissao <- venda*0.20
+senao (venda => 30000) entao
+   comissao <- venda*0.15
+se (venda < 30000 ) entao
+   comissao <- venda*0.10
+fimse
 fimse
 
 
-escreval("=======dados=======")
+
+escreval("=======dados do corretor=======")
+
 
 
 Fimalgoritmo
