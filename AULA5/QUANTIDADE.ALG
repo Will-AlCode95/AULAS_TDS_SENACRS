@@ -1,4 +1,4 @@
-Algoritmo "semnome"
+Algoritmo "quantidade"
 // Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Antonio Carlos Nicolodi 
 // Descrição   : Aqui você descreve o que o programa faz! (função)
@@ -22,8 +22,8 @@ Inicio
 
       total <- precoUnitario * quantidade
 
-      escreval("Preço unitário: R$", precoUnitario:6:2)
-      escreval("Total da compra: R$", total:6:2)
+      escreval("Preço unitário: R$", precoUnitario:4:2)
+      escreval("Total da compra: R$", total:4:2)
 
 
 
