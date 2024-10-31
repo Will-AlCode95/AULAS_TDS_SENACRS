@@ -2,16 +2,6 @@
 
 O **Visualg** é um ambiente de desenvolvimento simples, voltado para a criação e execução de algoritmos em português estruturado. Com uma interface amigável e intuitiva, ele facilita o aprendizado de programação, especialmente para iniciantes. O Visualg permite criar e testar algoritmos de maneira prática, sendo ideal para estudantes e professores.
 
-## Tabela de Conteúdos
-
-- [Recursos](#recursos)
-- [Instalação](#instalação)
-- [Começando a Usar](#começando-a-usar)
-- [Exemplo de Algoritmo](#exemplo-de-algoritmo)
-- [FAQ](#faq)
-- [Contribuições](#contribuições)
-- [Licença](#licença)
-
 ## Recursos
 
 - **Interface em português**: Pensado para quem está começando a programar.
