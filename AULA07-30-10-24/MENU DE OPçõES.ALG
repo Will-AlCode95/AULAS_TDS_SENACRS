@@ -3,14 +3,20 @@ Algoritmo "Menu de Opções"
 // Data atual  : 30/10/2024
 Var
 // Seção de Declarações das variáveis 
-etiqueta, total, parcelado:real
+etiqueta, total, parcelado,cpf:real
 quantidade,opcao: inteiro
-produto: caracter
+produto,usuario: caracter
 
 Inicio
 // Seção de Comandos, procedimento, funções, operadores, etc... 
 escreval("=========LOJA DO WILE=========")
-
+escreval("==============================")
+escreval("===========DADOS DO USUÁRIO===========")
+escreval("Nome do cliente: ")
+leia(usuario)
+escreval("CPF: ")
+leia(cpf)
+escreval("======================================")
 escreva("Informe o nome do produto: ")
 leia(produto)
 escreva("Informe o valor do produto: R$ ")
@@ -19,33 +25,31 @@ escreva("Quantidade de Produto: ")
 leia(quantidade)
 
 escreval("=============ESCOLHA A OPÇÃO=================")
-escreval   ("============DE PAGAMENTO============")
+escreval("===============DE PAGAMENTO==================")
 
-escreval("1 - A vista em dinheiro, Pix ou cheque, 15% desconto")
-escreval("2 - A vista no cartão de débito, 10% de desconto")
-escreval("3 - Parcelado em 2x, preço normal sem juros ")
-escreval("4 - Parcelado em 3x, com acréscimo de 10%")
-escreval("===============================================")
-escreval("Escolha uma das opções(1,2,3,4): ")
+escreval("[1] - A vista em dinheiro, Pix ou cheque, 15% desconto")
+escreval("[2] - A vista no cartão de débito, 10% de desconto")
+escreval("[3] - Parcelado em 3x preço normal sem juros ")
+escreval("[4] - Parcelado em 4x com acréscimo de 10%")
+escreval("=============PROMO BLACK FRIDAY 2024==============")
+escreval("Comprando de 4 a 6 unidades: +5% de desconto no valor final")
+escreval("Comprando de 7 a 9 unidades: +10% sobre o valor final")
+escreval("Comprando de 10 ou mais unidades: +15% sobre o valor final")
+escreval("==================================================")
+escreval("Escolha uma das opções de Pagamento(1,2,3,4): ")
 leia(opcao)
 escreval("=================================================")
-escreval("Nome do produto comprado: ",produto)
-escreval("Valor do produto na etiqueta: R$ ",etiqueta:2:3)
 
 se (opcao = 1) entao
    total <- etiqueta - (etiqueta * 0.15)
    total <- quantidade * total
    escreval("opção 1 escolhida")
-    escreval("Valor total da compra do produto: R$", total:2:3)
-    escreval("Quantidade de Produto escolhida: ",quantidade)
 
    senao
      se (opcao = 2) entao
      total <- etiqueta - (etiqueta * 0.10)
      total <- quantidade * total
       escreval("opção 2 escolhida")
-      escreval("Valor total da compra do produto: R$", total:2:3)
-      escreval("Quantidade de Produto escolhida: ",quantidade)
 
    senao
      se(opcao = 3) entao
@@ -53,9 +57,7 @@ se (opcao = 1) entao
      parcelado <- etiqueta/2
      total <- quantidade * total
      escreval("Você escolheu a opção 3 como forma de pagamento")
-     escreval("Produto parcelado em 2x de : R$ ",parcelado:2:3)
-     escreval("Valor total da compra do produto: R$", total:2:3)
-     escreval("Quantidade de Produto escolhida: ",quantidade)
+     escreval("Produto parcelado em 2x de : R$ ",parcelado:3:2)
 
    senao
      se (opcao = 4) entao
@@ -64,16 +66,38 @@ se (opcao = 1) entao
          total <- quantidade * total
 
       escreval("Você escolheu a opção 4 como forma de pagamento")
-      escreval("Produto parcelado em 3x de : R$ ",parcelado:2:3)
-      escreval("Valor total da compra do produto: R$", total:2:3)
-      escreval("Quantidade de Produto escolhida: ",quantidade)
+      escreval("Produto parcelado em 3x de : R$ ",parcelado:3:2)
 
-           senao
-           escreval("Você escolheu uma opçao errada!")
-           fimse
-           fimse
-           fimse
-           fimse
+     fimse
+     fimse
+     fimse
+fimse
+
+  se ((quantidade >= 4) e (quantidade <= 6)) entao
+  total <- total - (total * 0.05)
+  senao
+   se ((quantidade >= 7) e (quantidade <=9)) entao
+   total <- total - (total * 0.10)
+   senao
+    se (quantidade >= 10) entao
+    total <- total - (total * 0.15)
+
+   fimse
+   fimse
+   fimse
+
+se((opcao <= 0) ou (opcao >= 5) )entao
+       escreval("Você escolheu uma opção errada!")
+       escreval("============ERROR=============!")
+senao
+      escreval("==============Nota Fiscal===============")
+      escreval("Nome: ",usuario)
+      escreval("CPF: ",cpf)
+      escreval("Nome do produto comprado: ",produto)
+      escreval("Valor do produto na etiqueta: R$ ",etiqueta:3:2)
+      escreval("Quantidade de produtos comprados: ",quantidade)
+      escreval("Valor total da compra do produto: R$", total:3:2)
+fimse
 
 Fimalgoritmo
 
