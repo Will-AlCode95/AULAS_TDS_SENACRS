@@ -34,28 +34,22 @@ leia(valor1)
 escreval("Digite o segundo valor: ")
 leia(valor2)
 
-se (opcao = 1) entao
+  se (opcao = 1) entao
    total <-  valor1 + valor2
-
-senao
+  senao
      se (opcao = 2) entao
      total <- valor1 - valor2
-
-senao
-     se(opcao = 3) entao
-     total <- valor1 * valor2
-
- senao
+      senao
+       se(opcao = 3) entao
+        total <- valor1 * valor2
+  senao
      se (opcao = 4) entao
          total <- valor1 / valor2
 
-
-
-
-fimse
-fimse
-fimse
-fimse
+   fimse
+   fimse
+   fimse
+   fimse
 escreval("Resultado da operação: ",total)
 fimse
 
