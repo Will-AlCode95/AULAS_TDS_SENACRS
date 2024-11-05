@@ -1,18 +1,16 @@
 Algoritmo "Menu de Pagamento"
 // Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi 
-// Descrição   : Aqui você descreve o que o programa faz! (função)
-// Autor(a)    : Nome do(a) aluno(a)
 // Data atual  : 04/11/2024
 Var
 // Seção de Declarações das variáveis 
 nome:caracter
 valor:real
-opcao:inteiro
+opcao:real
+contrario:inteiro
 
 Inicio
 // Seção de Comandos, procedimento, funções, operadores, etc... 
-escreval("digite o nome: ")
+escreval("digite o nome do vendedor: ")
 leia(nome)
 escreval("digite o valor: ")
 leia(valor)
@@ -26,24 +24,35 @@ escreval("6- venda com cartão de crédito - desconto de 7%")
 escreval("digite o numero da opção desejada: ")
 leia(opcao)
 
-escolha opcao
+se (opcao >= 1) e (opcao <= 6) entao
+    escolha opcao
       caso 1
-         opcao <- 0.10
+         opcao <- valor - (valor * 0.10)
+         escreval("Desconto de 10% aplicado!")
       caso 2
-         opcao <- 0.05
+         opcao <- valor - (valor * 0.05)
+          escreval("Desconto de 5% aplicado!")
       caso 3
-         opcao
+         opcao <- valor
+         escreval("Valor s/Desconto")
       caso 4
-         opcao <- 0.05
+         opcao <- valor + (valor * 0.05)
+         escreval("Acréscimo de 5% aplicado!")
       caso 5
-         opcao <- 0.08
+         opcao <- valor - (valor * 0.08)
+         escreval("Desconto de 8% aplicado!")
       caso 6
-         opcao <- 0.07
+         opcao <- valor - (valor * 0.07)
+         escreval("Desconto de 7% aplicado!")
+      fimescolha
 
-      caso contrario
-         escreval("Código inválido")
-   fimescolha
+    escreval("==========VALOR DA NOTA============")
+    escreval("Nome do Vendedor: ",nome)
+    escreval("valor total da compra: ",opcao)
 
-    escreval("Desconto aplicado: ", opcao * 100, "%")
+senao
+      escreval("======CÓDIGO INVÁLIDO!======")
+      escreval("==========ERROR!============")
+fimse
 
 Fimalgoritmo

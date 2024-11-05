@@ -29,23 +29,9 @@ Inicio
             escreval("categoria do jogador: ",categoria)
             
          senao
-            escreval("Categoria: ")
             escreval("Idade fora das categorias disponíveis.")
          fimse
       fimse
    fimse
-
-escreval("nome do jogador: ",nome)
-escreval("idade do jogador:",idade)
-
-
-Fimalgoritmo
-
-
-
-
-
-
-
 
 Fimalgoritmo

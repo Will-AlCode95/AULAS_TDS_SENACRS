@@ -1,4 +1,6 @@
 Algoritmo "jogador v2"
+// Disciplina   : [Linguagem e Lógica de Programação] 
+// Professor   : Antonio Carlos Nicolodi 
 
 // Seção de Declarações das variáveis
 Var
