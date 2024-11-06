@@ -1,0 +1,24 @@
+Algoritmo "FUNÇÃO ENQUANTO/SE"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi 
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 06/11/2024
+Var
+// Seção de Declarações das variáveis 
+num:inteiro
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+num <- 0
+enquanto (num <= 100) faca
+         se(num mod 2 = 0) entao
+              escreval("O número ",num," é par!")
+            senao
+              escreval("O numero ",num," é impar!")
+         fimse
+
+   num <- num + 1
+   fimenquanto
+
+Fimalgoritmo
