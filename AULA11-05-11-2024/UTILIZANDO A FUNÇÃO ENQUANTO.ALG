@@ -6,13 +6,13 @@ Algoritmo "UTILIZANDO A FUNÇÃO ENQUANTO"
 // Data atual  : 05/11/2024
 Var
 // Seção de Declarações das variáveis 
-op: caracter
+loop: caracter
 num:inteiro
 
 Inicio
 // Seção de Comandos, procedimento, funções, operadores, etc... 
-op <- "s"
-enquanto ((op = "s") ou (op = "S")) faca
+loop <- "s"
+enquanto ((loop = "s") ou (loop = "S")) faca
                   escreva("número: ")
                   leia(num)
                   escreval("========================")

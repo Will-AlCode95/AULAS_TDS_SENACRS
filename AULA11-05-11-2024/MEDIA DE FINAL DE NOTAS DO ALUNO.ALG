@@ -7,8 +7,7 @@ Algoritmo "MEDIA DE FINAL DE NOTAS DO ALUNO"
 Var
 // Seção de Declarações das variáveis 
  nota1,nota2,nota3,media:real
- opcao:inteiro
- nome,categoria:caracter
+ nome:caracter
 
 
 Inicio
@@ -25,27 +24,23 @@ leia(nota3)
 media <- (nota1+nota2+nota3)/3
 escolha (media)
     caso = 0 ate 4
-        escreval("O aluno está Reprovado.")
+        escreval("=========SITUAÇÃO CURRICULAR========")
+        escreval("=======O aluno está Reprovado.=(===")
     caso = 5 ate 6
-        escreval("O aluno está em recuperação.")
+        escreval("=========SITUAÇÃO CURRICULAR========")
+        escreval("=====O aluno está em recuperação.=|===")
     caso = 7 ate 10
-        escreval("O aluno está aprovado")
+        escreval("=========SITUAÇÃO CURRICULAR========")
+        escreval("========O aluno está aprovado.=)======")
     outrocaso
-        escreval("Média inválida.")
+        escreval("Média inválida.")  //código não 100%funcional!
     fimescolha
-
 
    // Usando escolha para determinar a categoria
 
-
-
-
-escreval("=========SITUAÇÃO CURRICULAR========")
 escreval("nome do aluno: ",nome)
 escreval("notas do aluno: ",nota1,",",nota2,",",nota3)
 escreval("média final: ",media:2:2)
-escreval("situação: ",categoria)
-
 
 
 Fimalgoritmo
