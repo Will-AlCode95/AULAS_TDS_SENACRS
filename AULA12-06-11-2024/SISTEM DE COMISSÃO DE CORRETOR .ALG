@@ -1,4 +1,4 @@
-Algoritmo "FUNÇÃO ENQUANTO/SE"
+Algoritmo " SISTEM DE COMISSÃO DE CORRETOR "
 // Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Antonio Carlos Nicolodi 
 // Descrição   : Aqui você descreve o que o programa faz! (função)
@@ -6,19 +6,17 @@ Algoritmo "FUNÇÃO ENQUANTO/SE"
 // Data atual  : 06/11/2024
 Var
 // Seção de Declarações das variáveis 
-num:inteiro
+ nome: caracter
+ valor:real
+ comissao:inteiro
+
 
 Inicio
 // Seção de Comandos, procedimento, funções, operadores, etc... 
-num <- 0
-enquanto (num <= 100) faca
-         se(num mod 2 = 0) entao
-              escreval("O número ",num," é par!")
-            senao
-              escreval("O numero ",num," é impar!")
-         fimse
+escreval("digite o nome: ")
+leia(nome)
+escreval("digite o valor do imovél: ")
+leia(valor)
 
-   num <- num + 1
-   fimenquanto
 
 Fimalgoritmo
