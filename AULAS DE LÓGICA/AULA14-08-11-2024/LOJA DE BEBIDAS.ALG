@@ -5,15 +5,15 @@ Algoritmo "LOJA DE BEBIDAS"
 Var
 // Seção de Declarações das variáveis
 total, subtotal, pagamento: real
-quantidade, opcao, quanttotal, pag: inteiro
-bebida, sn, parcela, s: caracter
+quantidade, opcao, quanttotal, pag, opag: inteiro
+bebida, sn, parcela: caracter
 
 Inicio
 // Inicializações
 total <- 0
 quanttotal <- 0
 sn <- "S"
-s <- "S"
+opag <- 0
 
 // Seção de Comandos
 enquanto ((sn = "S") ou (sn = "s")) faca
@@ -67,7 +67,6 @@ enquanto ((sn = "S") ou (sn = "s")) faca
    escreval("Quantidade total de bebidas compradas: ", quanttotal, " unidades.")
    escreval("Valor total da sua compra R$ ", total:2:2)
 
-   enquanto ((s = "S") ou (s = "s")) faca
    escreva ("     FORMAS DE PAGAMENTO    ")
    escreval
    escreva ("1- Venda a vista em dinheiro ou PIX - desconto 10%")
@@ -87,8 +86,6 @@ enquanto ((sn = "S") ou (sn = "s")) faca
 
    se((pag <1 ) ou (pag > 6))entao
     escreval("Você escolheu uma opção errada!")
-    escreval("deseja continuar?(S/N)")
-    leia(s)
    senao
       escolha (pag)
       escreval
@@ -118,5 +115,5 @@ enquanto ((sn = "S") ou (sn = "s")) faca
       escreval("forma de pagamento: ",parcela)
       escreval("Valor total da sua compra R$ ", pagamento:2:2)
   fimse
-  fimenquanto
+
 Fimalgoritmo

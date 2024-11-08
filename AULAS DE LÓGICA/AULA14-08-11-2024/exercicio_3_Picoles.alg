@@ -1,4 +1,6 @@
 algoritmo "Sorveteria"
+// Disciplina   : [Linguagem e Lógica de Programação] 
+// Professor   : Antonio Carlos Nicolodi 
 //Descrição: Sistema para realizar compras de picolés
 var
 total, subtotal, parcelamento: real
@@ -85,7 +87,7 @@ enquanto ((oppagamento <= 0)ou(oppagamento > 6)) faca
    senao
       escolha (oppagamento)
         caso 1
-        total <- total-(total * 0.1)
+        total <- total-(total * 0.10)
         escreval("Sua compra teve um desconto de 10%")
         caso 2
         total <- total-(total * 0.05)
@@ -97,7 +99,7 @@ enquanto ((oppagamento <= 0)ou(oppagamento > 6)) faca
         parcelamento <- total / 2
         escreval("Sua compra teve um acréscimo de 5%, parcelado em 2x de R$ ",parcelamento:2:2)
         caso 5
-        total <- total+(total * 0.1)
+        total <- total+(total * 0.10)
         parcelamento <- total / 3
         escreval("Sua compra teve um acréscimo de 10%, parcelado em 3x de R$ ",parcelamento:2:2)
         caso 6
