@@ -4,15 +4,16 @@ Algoritmo "LOJA DE BEBIDAS"
 
 Var
 // Seção de Declarações das variáveis
-total, subtotal: real
-quantidade, opcao, quanttotal: inteiro
-bebida, sn: caracter
+total, subtotal, pagamento: real
+quantidade, opcao, quanttotal, pag: inteiro
+bebida, sn, parcela, s: caracter
 
 Inicio
 // Inicializações
 total <- 0
 quanttotal <- 0
 sn <- "S"
+s <- "S"
 
 // Seção de Comandos
 enquanto ((sn = "S") ou (sn = "s")) faca
@@ -60,9 +61,60 @@ enquanto ((sn = "S") ou (sn = "s")) faca
 
    escreval("Deseja continuar comprando S/N: ")
    leia(sn)
+   fimenquanto
+
    escreval("==============================================")
    escreval("Quantidade total de bebidas compradas: ", quanttotal, " unidades.")
    escreval("Valor total da sua compra R$ ", total:2:2)
-
-fimenquanto
+   escreva ("     FORMAS DE PAGAMENTO    ")
+   escreval
+   escreva ("1- Venda a vista em dinheiro ou PIX - desconto 10%")
+  escreval
+  escreva ("2- Venda no cartão de débito - desconto de 5%")
+  escreval
+  escreva ("3- Venda no cartão de crédito 1x - mesmo preço")
+  escreval
+  escreva ("4- Venda no cartão de crédito 2x - acréscimo de 5%")
+  escreval
+  escreva ("5- Venda no cartão de crédito 3x - acréscimo de 10%")
+  escreval
+  escreva ("6- Venda com cartão de crédito 4x - acréscimo 15%")
+  escreval
+  escreva ("Escolha uma das opções acima: ")
+   leia (pag)
+   enquanto ((s = "S") ou (s = "s")) faca
+   se((pag <1 ) ou (pag > 6))entao
+    escreval("Você escolheu uma opção errada!")
+    escreval("deseja continuar?(S/N)")
+    leia(s)
+   senao
+      escolha (pag)
+      escreval
+      escreval
+      caso = 1
+      pagamento <- total - (total*0.10)
+      parcela <- "a vista em dinheiro ou PIX - desconto 10%"
+      caso = 2
+      pagamento <- total - (total*0.05)
+      parcela <- "cartão de débito - desconto de 5%"
+      caso = 3
+      pagamento <- total
+      parcela <- "cartão de crédito 1x - mesmo preço"
+      caso = 4
+      pagamento <- total + (total*0.05)
+      parcela <- "cartão de crédito 2x - acréscimo de 5%"
+      caso = 5
+      pagamento <- total + (total*0.10)
+      parcela <- "cartão de crédito 3x - acréscimo de 10%"
+      caso = 6
+      pagamento <- total + (total*0.15)
+      parcela <- "cartão de crédito 4x - acréscimo 15%"
+      outrocaso
+      escreval ("Opção inválida!")
+      fimescolha
+      escreval("=================CHECKOUT==================")
+      escreval("forma de pagamento: ",parcela)
+      escreval("Valor total da sua compra R$ ", pagamento:2:2)
+  fimse
+  fimenquanto
 Fimalgoritmo
