@@ -1,4 +1,6 @@
 algoritmo "Sorveteria"
+// Disciplina   : [Linguagem e Lógica de Programação] 
+// Professor   : Antonio Carlos Nicolodi 
 //Descrição: Sistema para realizar compras de picolés
 var
 total, subtotal: real
