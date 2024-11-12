@@ -1,6 +1,4 @@
 Algoritmo "LOJA DE BEBIDAS 2.0"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
 
 Var
 // Seção de Declarações das variáveis
