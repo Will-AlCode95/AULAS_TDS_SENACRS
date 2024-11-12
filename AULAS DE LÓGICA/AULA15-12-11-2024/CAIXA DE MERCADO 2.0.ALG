@@ -1,4 +1,6 @@
 Algoritmo "CAIXA DE MERCADO 2.5"
+// Disciplina   : [Linguagem e Lógica de Programação] 
+// Professor   : Antonio Carlos Nicolodi 
 
 Var
 // Seção de Declarações das variáveis
@@ -87,21 +89,21 @@ enquanto ((novoCliente = "S") ou (novoCliente = "s")) faca
     escreval
 
 
-repita
-   escreva("Escolha uma das opções acima: ")
-   leia(pag)
-
-   se ((pag < 1) ou (pag > 6)) entao
-      escreval("Você escolheu uma opção errada!")
-      escreval("Deseja tentar escolher uma forma de pagamento novamente? (S/N): ")
-      leia(sn)
-   senao
-      sn <- "N"  // Sai do loop se a opção for válida
-   fimse
-ate ((pag >= 1) e (pag <= 6)) ou ((sn = "N") ou (sn = "n"))
-
-se ((sn = "N") ou (sn = "n")) e ((pag < 1) ou (pag > 6)) entao
-   escreval("Compra cancelada.")
+repita                                                           //LOOP//
+   escreva("Escolha uma das opções acima: ")                     //
+   leia(pag)                                                       //
+                                                                     //
+   se ((pag < 1) ou (pag > 6)) entao                                   //
+      escreval("Você escolheu uma opção errada!")                        // // // ////
+      escreval("Deseja tentar escolher uma forma de pagamento novamente? (S/N): ") //
+      leia(sn)                                                                    //
+   senao                                                                    // ////
+      sn <- "N"  // Sai do loop se a opção for válida                      //
+   fimse                                                                  //
+ate ((pag >= 1) e (pag <= 6)) ou ((sn = "N") ou (sn = "n"))              //
+                                                                        //
+se ((sn = "N") ou (sn = "n")) e ((pag < 1) ou (pag > 6)) entao        //
+   escreval("Compra cancelada.")                                     //LOOP
 senao
    escolha pag
       caso 1
@@ -139,7 +141,7 @@ fimse
 fimenquanto
 
 // Fechamento do sistema ao final do dia
-escreval("===========FECHAMENTO DO DIA=============")
+escreval("===============FECHAMENTO DO DIA=================")
 escreval("Total de itens vendidos no dia: ", totalItensVendidos, " unidades.")
 escreval("Valor total arrecadado no dia: R$ ", totalArrecadadoDia:2:2)
 escreval("===========================================")
