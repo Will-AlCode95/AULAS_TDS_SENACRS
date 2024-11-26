@@ -18,7 +18,7 @@ Inicio
    escreva("Digite o valor de b: ")
    leia(valor2)
 
-   // Chama a função para trocar os valores de a e b e atribui os valores de volta
+   // Chama a função para trocar os valores de valor1 e valor2 e atribui os valores de volta
    temp <- valor1
    valor1 <- valor2
    valor2 <- temp
