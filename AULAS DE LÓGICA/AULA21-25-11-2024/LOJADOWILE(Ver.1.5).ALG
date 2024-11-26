@@ -1,6 +1,5 @@
-Algoritmo "LOJA DE KIDSFUN"
-// Disciplina   : [Linguagem e Lógica de Programação] 
-// Professor   :Miguel 
+Algoritmo "LOJA DO WILE 1.5Ver"
+//VERSÃO QUE O USUÁRIO DIGITA A QUANTIDADE DE PARCELAS QUE QUISER
 
 Var
    valor_parcela,total, subtotal,valor_final: real

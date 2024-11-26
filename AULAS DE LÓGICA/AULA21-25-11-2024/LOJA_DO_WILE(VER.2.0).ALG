@@ -1,6 +1,5 @@
 algoritmo "LOJA_DO_WILE(Ver.2.0)"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Miguel
+// VERSÃO QUE CHAMA UMA FUNÇÃO QUE FAZ OS CALCULOS DO PAGAMENTO
 Var
    total, subtotal: real
    quantidade, opcao, quanttotal, parcelas, i, indice, forma_pagamento: inteiro
