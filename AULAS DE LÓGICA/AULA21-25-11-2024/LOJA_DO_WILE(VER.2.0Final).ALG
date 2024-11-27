@@ -115,9 +115,10 @@ Inicio
          total <- total + subtotal
          quanttotal <- quanttotal + quantidade
          //  // //  //   //  //   //  //  //  //  // //
-         indice <- indice + 1                         //armazenam os nomes, preços unitários e quantidades de produtos adquiridos nos: [vetores], produtos,precos,unidades
+         indice <- indice + 1  //indice: Controla em qual posição dos vetores os dados do próximo produto serão armazenados.
          precos[indice] <- SelecionarBrinquedo(opcao)
-         quantidades[indice] <- quantidade
+         quantidades[indice] <- quantidade //Armazena a quantidade adquirida do produto.
+         produtos[indice] <- brinquedo //produtos[indice]: Armazena o nome do produto adquirido.
 
          escreval("Você comprou ", quantidade, " unidade(s) de ", brinquedo)
          escreval("Você vai pagar R$ ", subtotal:2:2)
@@ -132,7 +133,9 @@ Inicio
 
       limpatela  //apaga na tela tudo que está acima
 
-   forma_pagamento <- 0  // Inicializa com um valor inválido
+   forma_pagamento <- 0  //Evita que a variável tenha lixo de memória.
+//Indica que nenhuma forma de pagamento válida foi selecionada no início.
+//Facilita a lógica de validação para exibir o menu repetidamente até que o usuário insira uma opção válida.
 
    Enquanto (forma_pagamento < 1) ou (forma_pagamento > 7) Faca
       escreval("================== FORMAS DE PAGAMENTO ===============")
@@ -175,7 +178,7 @@ Inicio
 //O valor resultante corresponde diretamente ao número de parcelas
 //Por que subtrair 2?
 //No menu de pagamento:
-//As opções 1 e 2 NÃO são parceladas (dinheiro/PIX e cartão de débito).
+//As opções 1 e 2 NÃO são parceladas(dinheiro/PIX e cartão de débito).
 //As opções parceladas começam em 3, onde 3 - 2 = 1 representa 1 parcela.
 
          valor_parcela <- valor_final / parcelas
