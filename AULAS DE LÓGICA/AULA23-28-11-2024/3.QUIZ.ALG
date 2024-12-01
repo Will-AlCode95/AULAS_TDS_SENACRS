@@ -1,14 +1,14 @@
 algoritmo "QUIZ"
 
 //QUIZ DE PERGUNTAS E RESPOSTAS
-//ADICIONADO MUITO MAIS PERGUNTAS E RESPOSTAS
+//ADICIONADO MAIS PERGUNTAS E RESPOSTAS
 //ADICIONADO UM LOOP PARA O GAME CONTINUAR ATIVO ATÉ O JOGADOR DECIDIR SAIR
-//CORRIGIDO UNS PEQUENOS BUG DE VARIÁVEL
+//CORRIGIDO UNS PEQUENOS BUGS DE VARIÁVEL
 
 var
-   perguntas: vetor[1..20] de caractere
-   alternativas: vetor[1..20] de caractere
-   respostas: vetor[1..20] de inteiro
+   perguntas: vetor[1..15] de caractere
+   alternativas: vetor[1..15] de caractere
+   respostas: vetor[1..15] de inteiro
    respostaJogador, escolhar: inteiro
       pontuacao, i: inteiro
 
@@ -32,11 +32,6 @@ inicio
    perguntas[13] <- "Quem foi o inventor da lâmpada elétrica?"
    perguntas[14] <- "Qual é o esporte mais popular no Brasil?"
    perguntas[15] <- "Qual animal é conhecido por sua habilidade de mudar de cor?"
-   perguntas[16] <- "Qual é o maior deserto do mundo?"
-   perguntas[17] <- "Em que ano o homem pisou na Lua pela primeira vez?"
-   perguntas[18] <- "Quantos segundos existem em um minuto?"
-   perguntas[19] <- "Qual é a capital da Argentina?"
-   perguntas[20] <- "Quem pintou a Mona Lisa?"
 
    // Definindo alternativas
    alternativas[1] <- "1. São Paulo  2. Rio de Janeiro  3. Brasília"
@@ -54,11 +49,6 @@ inicio
    alternativas[13] <- "1. Nikola Tesla  2. Thomas Edison  3. Alexander Graham Bell"
    alternativas[14] <- "1. Futebol  2. Vôlei  3. Basquete"
    alternativas[15] <- "1. Camaleão  2. Polvo  3. Lagarto"
-   alternativas[16] <- "1. Saara  2. Deserto da Antártida  3. Deserto de Gobi"
-   alternativas[17] <- "1. 1965  2. 1969  3. 1972"
-   alternativas[18] <- "1. 60  2. 100  3. 120"
-   alternativas[19] <- "1. Montevidéu  2. Buenos Aires  3. Lima"
-   alternativas[20] <- "1. Michelangelo  2. Leonardo da Vinci  3. Rafael"
 
    // Definindo respostas corretas
    respostas[1] <- 3
@@ -76,11 +66,6 @@ inicio
    respostas[13] <- 2
    respostas[14] <- 1
    respostas[15] <- 1
-   respostas[16] <- 2
-   respostas[17] <- 2
-   respostas[18] <- 1
-   respostas[19] <- 2
-   respostas[20] <- 2
 
    // Loop principal para manter o jogo ativo
    repita
@@ -90,10 +75,10 @@ inicio
       escreval("")
 
       // Iniciando o loop para as perguntas
-      para i de 1 ate 20 faca
+      para i de 1 ate 15 faca
          escreval("Pergunta ", i, ": ", perguntas[i])
          escreval(alternativas[i])
-         escreva("Sua resposta (digite o número correspondente): ")
+         escreva("Sua resposta (digite o número correspondente 1,2 ou 3): ")
          leia(respostaJogador)
 
          // Verificando se a resposta está correta
@@ -108,8 +93,8 @@ inicio
       fimpara
 
       // Mostrando a pontuação final
-      escreval("Fim do jogo!")
-      escreval("Sua pontuação final foi: ", pontuacao, " de 20.")
+      escreval("GAME OVER!")
+      escreval("Sua pontuação final foi: ", pontuacao, " de 15.")
       escreval("")
 
       // Perguntar ao jogador se deseja jogar novamente
