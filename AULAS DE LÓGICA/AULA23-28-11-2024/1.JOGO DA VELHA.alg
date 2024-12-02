@@ -1,9 +1,10 @@
-algoritmo "JOGO_DA_VELHA"
+algoritmo "GAME_DA_VELHA"
 
 
 //ADICIONADO COMO JOGAR E MENSAGEM DE BEM-VINDO
 //ADICIONADO OBJETIVO DO JOGO
 //MODIFICADO A VÁRIAVEL "EN" POR "SN"
+//MUDADO ALGUMAS PALAVRAS
 
 var
    JOGO: VETOR[1..10,1..10] DE CARACTER // declaração de vetor de 10 posições para o jogo
@@ -16,12 +17,12 @@ var
 procedimento Mostra_jogo()
 inicio
    escreval(" ------------------------------------")// placar do jogo que pode mudar no final
-   escreval("|######### Placar parcial ###########")
+   escreval("|######### PARTIAL SCORE ###########")
    escreval("|",Jogador[1], " = ",cont1)
    escreval("|",Jogador[2], " = ",cont2)
    escreval(" ------------------------------------")
 
-   escreval("=====O==X====BEM-VINDO AO JOGO DA VÉIA====X====O===")
+   escreval("=====O==X====BEM-VINDO AO GAME DA VÉIA====X====O===")
    escreval("O objetivo do jogo é preencher uma grade de 3 por 3 com símbolos, X e O")
    escreval("Como Jogar: Digite primeiro a letra da coluna (a,b ou c) e depois digite o número da linha(1,2 ou 3) escolhida e depois clique enter")
    escreval
@@ -291,12 +292,12 @@ inicio                                 //começo do código
          //verifica se o jogo termina
       ATE (CONT_JOGADAS = 9) OU (VENCEDOR = VERDADEIRO)
       escreval(" ------------------------------------")
-      escreval("|######### Placar Final ##########")  // placar do final do jogo
+      escreval("|######### FINAL SCORE ##########")  // placar do final do jogo
       escreval("|",Jogador[1] ," = ",cont1)
       escreval("|",Jogador[2], " = ",cont2)
       escreval(" ---------------------------------")
-      // perguanta se quer jogr de novo
-      escreval("Desejas jogar de novo s/n")
+      // pergunta se quer jogar de novo
+      escreval("Bora jogar de novo? sim(s) ou não(n)")
       leia(sn)
       limpatela
    ate sn="n"

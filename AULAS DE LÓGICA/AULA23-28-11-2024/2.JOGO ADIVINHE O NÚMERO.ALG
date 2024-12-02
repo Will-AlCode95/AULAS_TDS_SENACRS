@@ -2,7 +2,7 @@ algoritmo "JOGO DO ADIVINHE"
 // Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Miguel
 
-//ADICIONADO A LINHA DE CÓDIGO: se (palpite < 1) ou (palpite > 50) entao
+//ADICIONADO AS LINHAS DE CÓDIGO: se (palpite < 1) ou (palpite > 50) entao
 //escreval("Número inválido. Por favor, insira um número entre 1 e 50.")
 //NO CÓDIGO ORIGINAL NÃO TINHA ESSA LINHA ACIMA
 

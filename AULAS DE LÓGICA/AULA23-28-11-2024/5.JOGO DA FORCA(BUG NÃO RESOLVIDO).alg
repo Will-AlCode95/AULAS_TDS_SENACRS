@@ -1,4 +1,4 @@
-algoritmo "jogo da forca"
+algoritmo "jogo da forca bugada x.x"
 // Função : Jogo da Forca
 // Autor : Gabrieli  - Projeto Algoritmos Avançados
 // Data : 16/09/2014

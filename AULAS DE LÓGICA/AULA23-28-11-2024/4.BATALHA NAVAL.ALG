@@ -563,7 +563,7 @@ Inicio
       escreval("     PARABENS! VOCE GANHOU!")
       escreval("")
    senao
-      escreval("     Sinto muito, nao foi dessa vez")
+      escreval("     Sinto muito, não foi dessa vez =/")
       escreval("")
    fimse
 
