@@ -13,6 +13,12 @@ Var
    cpfs: vetor[1..3] de caracter               // Armazena CPFs dos clientes
    telefones: vetor[1..3] de caracter          // Armazena telefones dos clientes
 
+   // ... (variáveis anteriores mantidas) ...
+
+   filmeAlugado: vetor[1..3] de logico        // True se filme está alugado, False se disponível
+   clienteLocador: vetor[1..3] de inteiro      // Armazena o índice do cliente que alugou cada filme
+   dataLocacao: vetor[1..3] de caracter        // Armazena a data da locação
+
    // Procedimento para editar informações de um filme cadastrado
 Procedimento EditarFilme()
 Inicio
@@ -205,11 +211,115 @@ Inicio
    leia()
 Fimprocedimento
 
+Procedimento AlugarFilme()
+Inicio
+   se (totalFilmes = 0) entao
+      escreval("Não há filmes cadastrados.")
+   senao
+      se (totalClientes = 0) entao
+         escreval("Não há clientes cadastrados para alugar filmes.")
+      senao
+         escreval("====== FILMES DISPONÍVEIS PARA LOCAÇÃO ======")
+         para i de 1 ate totalFilmes faca
+            se nao filmeAlugado[i] entao
+               escreval(i, ". ", filmes[i], " | Gênero: ", generos[i])
+            fimse
+         fimpara
+
+         escreva("Digite o número do filme que deseja alugar: ")
+         leia(indice)
+
+         se (indice >= 1) e (indice <= totalFilmes) entao
+            se nao filmeAlugado[indice] entao
+               escreval("====== CLIENTES CADASTRADOS ======")
+               para i de 1 ate totalClientes faca
+                  escreval(i, ". ", clientes[i])
+               fimpara
+
+               escreva("Digite o número do cliente que está alugando: ")
+               leia(i)
+
+               se (i >= 1) e (i <= totalClientes) entao
+                  filmeAlugado[indice] <- verdadeiro
+                  clienteLocador[indice] <- i
+                  escreva("Digite a data da locação (DD/MM/AAAA): ")
+                  leia(dataLocacao[indice])
+                  escreval("Filme alugado com sucesso!")
+               senao
+                  escreval("Cliente inválido!")
+               fimse
+            senao
+               escreval("Este filme já está alugado!")
+            fimse
+         senao
+            escreval("Filme inválido!")
+         fimse
+      fimse
+   fimse
+   leia()
+Fimprocedimento
+
+Procedimento DevolverFilme()
+Inicio
+   se totalFilmes = 0 entao
+      escreval("Não há filmes cadastrados.")
+   senao
+      escreval("====== FILMES ALUGADOS ======")
+      para i de 1 ate totalFilmes faca
+         se filmeAlugado[i] entao
+            escreval(i, ". ", filmes[i], " | Cliente: ", clientes[clienteLocador[i]])
+         fimse
+      fimpara
+
+      escreva("Digite o número do filme a ser devolvido: ")
+      leia(indice)
+
+      se (indice >= 1) e (indice <= totalFilmes) entao
+         se filmeAlugado[indice] entao
+            filmeAlugado[indice] <- falso
+            clienteLocador[indice] <- 0
+            dataLocacao[indice] <- ""
+            escreval("Filme devolvido com sucesso!")
+         senao
+            escreval("Este filme não está alugado!")
+         fimse
+      senao
+         escreval("Filme inválido!")
+      fimse
+   fimse
+   leia()
+Fimprocedimento
+
+Procedimento ListarFilmesAlugados()
+Inicio
+   escreval("====== FILMES ATUALMENTE ALUGADOS ======")
+   para i de 1 ate totalFilmes faca
+      se filmeAlugado[i] entao
+         escreval("Filme: ", filmes[i])
+         escreval("Cliente: ", clientes[clienteLocador[i]])
+         escreval("Data da locação: ", dataLocacao[i])
+         escreval("------------------------")
+      fimse
+   fimpara
+
+   se totalFilmes = 0 entao
+      escreval("Não há filmes cadastrados.")
+   fimse
+   leia()
+Fimprocedimento
+
 // Bloco principal do programa
 Inicio
    // Inicializa contadores de filmes e clientes
    totalFilmes <- 0
    totalClientes <- 0
+
+   // Inicializa todos os filmes como não alugados
+   para i de 1 ate 3 faca
+      filmeAlugado[i] <- falso
+      clienteLocador[i] <- 0
+      dataLocacao[i] <- ""
+   fimpara
 
    // Loop principal do sistema com menu de opções
    repita
@@ -223,7 +333,12 @@ Inicio
       escreval("6. Editar Cliente")
       escreval("7. Excluir Cliente")
       escreval("8. Listar Clientes Cadastrados")
-      escreval("9. Sair")
+      escreval("9. Alugar Filme")
+      escreval("10. Devolver Filme")
+      escreval("11. Listar Filmes Alugados")
+      escreval("12. Sair")
+
+
       escreva("Escolha uma opção: ")
       leia(opcaoMenu)
 
@@ -317,22 +432,26 @@ Inicio
          fimse
          leia()
 
-         // SAIR
       caso 9
+         AlugarFilme()
+
+      caso 10
+         DevolverFilme()
+
+      caso 11
+         ListarFilmesAlugados()
+
+      caso 12
          escreval("Saindo do sistema... Até logo!")
          escreval
          leia()
 
-         // Tratamento para opção inválida
       outrocaso
          escreval("Opção inválida! Tente novamente.")
          escreval
          leia()
-
       fimescolha
-      // Continua executando até que a opção 9 (sair) seja selecionada
-   ate opcaoMenu = 9
+   ate opcaoMenu = 12
+
 
 Fimalgoritmo
-
-//Nível de Complexidade do Código pra mim: Médio Alto
