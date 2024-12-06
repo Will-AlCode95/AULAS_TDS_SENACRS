@@ -355,7 +355,7 @@ Inicio
    // Loop principal do sistema com menu de opções
    repita
       // Exibe menu principal com todas as opções disponíveis
-      escreval("=========== LOCADORA DE VÍDEO SENAW ==========")
+      escreval("=========== LOCADORA DE VÍDEO TAPEBURSTER ==========")
       escreval("1. Cadastrar Filme")
       escreval("2. Editar Filme")
       escreval("3. Excluir Filme")
@@ -466,13 +466,13 @@ Inicio
          leia()
 
       caso 9
-         AlugarFilme()
+         AlugarFilme()    //chama procedimento AlugarFilme()
 
       caso 10
-         DevolverFilme()
+         DevolverFilme() //chama procedimento DevolverFilme()
 
       caso 11
-         ListarFilmesAlugados()
+         ListarFilmesAlugados() //chama procedimento ListarFilmesAlugados()
 
       caso 12
          escreval("Saindo do sistema... Até logo!")
@@ -485,6 +485,5 @@ Inicio
          leia()
       fimescolha
    ate opcaoMenu = 12
-
 
 Fimalgoritmo
