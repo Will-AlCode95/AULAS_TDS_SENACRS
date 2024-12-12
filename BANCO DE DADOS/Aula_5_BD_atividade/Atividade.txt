@@ -1,0 +1,7 @@
+Atividade:
+Criar um diagrama de entidade de relacionamento do projeto integrador;
+Enviar para o professor por e-mail em formato de imagem do diagrama de entidade de relacionamento e o diagrama de caso de uso;
+E-mail para envio:
+mglmatiolla@gmail.com
+Assunto: Diagramas PI
+Corpo de e-mail: Nome dos alunos + anexo diagramas
