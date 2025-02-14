@@ -1,0 +1,27 @@
+CREATE TABLE tabela001(
+   id_tabela001 int primary key auto_increment,
+   nome varchar(30) not null
+    sobrenome varchar(30) not null
+    idade int(3) null 
+)ENGINE=INNODB default charset=latin1;
+
+
+CREATE TABLE tabela001(
+   id_tabela001 int primary key auto_increment,
+   nome varchar(30) not null,
+   sobrenome varchar(30) not null,
+   idade int(3) not null,
+   endereco varchar(50) not null,
+   numero int(5) not null,
+    complemento varchar(10) null,
+    bairro varchar(50) not null,
+    cidade varchar(50) not null,
+    estado char(2) not null,
+    dataNascimento date not null,
+    sexo char(1) not null,
+    cpf varchar(11) not null,
+    telefone bigint(11) not null,
+    email varchar(50) not null,
+    obs text(140) null
+ )ENGINE=INNODB default charset=UTF8;
+   
