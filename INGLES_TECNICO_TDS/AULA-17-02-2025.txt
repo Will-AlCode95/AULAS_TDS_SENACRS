@@ -1,0 +1,50 @@
+[AULA_17-02-2025]
+
+1.Does claudete play american football?
+Claudete play's american football
+Claudete doesn't play american football
+
+2.Do they study at harvard?
+they study at harvard
+they don't study at harvard
+
+3.my students don't love to cook
+my students love to cook
+do my students love to cook?
+
+
+WWW is an abbreviation of the World Wide Web. 
+Which is what we generally refer to as the web. 
+In general terms, it is an information system where a document or other web resources like images or video can be identified by a URL. The documents are accessible through the HTTP protocol and are accessible through a web browser. It is very often labeled as the internet - which it is not synonymous with.
+   
+(tradução)
+WWW é a abreviação de World Wide Web (Rede Mundial de Computadores), que é o que geralmente chamamos de "a web". Em termos gerais, é um sistema de informação onde um documento ou outros recursos da web, como imagens ou vídeos, podem ser identificados por meio de uma URL. Os documentos são acessíveis pelo protocolo HTTP e podem ser visualizados através de um navegador web. Muitas vezes, o WWW é confundido com a internet, mas eles não são sinônimos.
+
+JSON means JavaScript Object Notation. It is a standard file format for data interchange. It uses text that can be read and understand by humans to store and transmit data objects between web servers and applications. It is a very commonly used data format
+
+(tradução)
+JSON significa JavaScript Object Notation (Notação de Objeto JavaScript). É um formato padrão de arquivo para a troca de dados. Ele utiliza texto legível e compreensível por humanos para armazenar e transmitir objetos de dados entre servidores web e aplicações. É um formato de dados muito utilizado. 
+
+IDE acronym
+IDE is an acronym for Integrated Development Environment. It is the software suite used by developers in a development environment and is designed to maximize productivity and efficiency for the developer.  
+
+(tradução)
+IDE é o acrônimo de Integrated Development Environment (Ambiente de Desenvolvimento Integrado). É um conjunto de softwares utilizado por desenvolvedores em um ambiente de desenvolvimento, projetado para maximizar a produtividade e a eficiência do programador.
+
+
+1-Unreal Engine is heavier to run on PC than C#
+
+(tradução)
+1-unreal engine é mais pesado para rodar no Pc do que c#
+
+2- a linguagem programação c é mais antiga que a linguagem programação python
+
+(tradução)
+a linguagem programação c é mais antiga que a linguagem programação python
+
+(tradução)
+3.o aplicativo duolingo é mais divertido do que o google trdutor
+
+3.the duolingo app is more fun than google translate
+
+
