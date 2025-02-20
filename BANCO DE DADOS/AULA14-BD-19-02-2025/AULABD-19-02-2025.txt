@@ -27,3 +27,19 @@ ALTER TABLE veiculo ADD numero_chassi INT(50) NOT NULL, ADD cor VARCHAR(30) NOT 
 ALTER TABLE mecanico ADD endereco VARCHAR(30) NOT NULL, ADD cidade VARCHAR(10) NOT NULL, ADD estado VARCHAR(10) NOT NULL;
 
 ALTER TABLE servico ADD data_problema DATE NOT NULL, ADD descricao_problema VARCHAR(50) NOT NULL, ADD data_solicitacao DATE NOT NULL;
+
+
+CREATE TABLE tabela003 (
+  id_tabela004 INT AUTO_INCREMENT PRIMARY KEY,
+  produto VARCHAR(50) NOT NULL,
+  marca VARCHAR(50) NOT NULL,
+  modelo VARCHAR(50) NOT NULL,
+  quantidade INT(5) NOT NULL,
+   data_entrada date NOT NULL,
+    obs TEXT(140) NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+pdgtech@senacrs.com.br
+
+INSERT INTO tabela001 (id_tabela001, nome, endereco, idade)
+VALUES (NULL, 'William', 'Rua Salvador Franca', 40);

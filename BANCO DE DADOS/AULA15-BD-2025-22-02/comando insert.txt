@@ -1,0 +1,44 @@
+CREATE DATABASE banco007;
+USE banco007;
+
+CREATE TABLE tabela01(
+    id_tabela01 int PRIMARY KEY AUTO_INCREMENT,
+    nome_completo varchar(100) NOT NULL,
+    endereco varchar(100) NOT NULL,
+    idade int(3) NULL
+    )ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+CREATE TABLE tabela02(
+    id_tabela02 int PRIMARY KEY AUTO_INCREMENT,
+    produto varchar(100) NOT NULL,
+    marca varchar(100) NOT NULL,
+    modelo varchar(100) NOT NULL,
+    quantidade int(5) NOT NULL,
+    data_entrada date NOT NULL,
+    obs text(140) NULL
+    )ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+INSERT INTO tabela01(nome_completo, endereco, idade)
+VALUES
+('Clotilde Chaves', 'Lima e Silva 100', 60);
+
+INSERT INTO tabela01
+(id_tabela01, nome_completo, endereco, idade)
+VALUES
+(NULL, 'Valdisney Disnei', 'Ipiranga 1000', 40);
+
+INSERT INTO tabela01(nome_completo, endereco, idade)
+VALUES
+('Ana da Silva', 'Lima e Silva 10', 20),('Paulo Ricardo', 'Lima e Silva 20', 30);
+
+INSERT INTO tabela01
+SET
+id_tabela01 = null,
+nome_completo = 'José Carlos',
+endereco = 'Andradas 200',
+idade = 33;
+
+INSERT INTO tabela01
+(nome_completo, endereco)
+VALUES
+('Luciano Gomes', 'Andradas 300');
