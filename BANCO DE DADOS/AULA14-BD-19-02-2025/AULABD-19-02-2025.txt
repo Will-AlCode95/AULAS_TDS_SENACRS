@@ -41,5 +41,15 @@ CREATE TABLE tabela003 (
 
 pdgtech@senacrs.com.br
 
-INSERT INTO tabela001 (id_tabela001, nome, endereco, idade)
+INSERT INTO tabela001 (id_tabela001, nome, endereco, idade),
 VALUES (NULL, 'William', 'Rua Salvador Franca', 40);
+
+INSERT INTO tabela02
+(nome_funcionario, endereco, cargo, setor, telefone, idade, data_entrada, obs)
+VALUES
+('Tonho da Lua', 'Venancio Aires 94', 'Tecnico de informatica', 'Suporte', "519999555", 40, 2939393, "tecnico de manutenção de ti do SenacTech"),
+("Chaves da Silva","Venancio Aires 56", "Secretaria", "Recepção", "5199966699", 39, 23939394, "auxiliar de atendimento de clientes");
+
+UPDATE tabela02 SET idade = 41 WHERE id_tabela02=1;
+
+UPDATE tabela02 SET nome_funcionario='Otavio', endereco='rua tanuki 45', idade=41 WHERE id_tabela02=1;

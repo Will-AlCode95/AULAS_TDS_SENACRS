@@ -1,0 +1,32 @@
+CREATE TABLE tabela003 (
+  id_tabela004 INT AUTO_INCREMENT PRIMARY KEY,
+  produto VARCHAR(50) NOT NULL,
+  marca VARCHAR(50) NOT NULL,
+  modelo VARCHAR(50) NOT NULL,
+  quantidade INT(5) NOT NULL,
+   data_entrada date NOT NULL,
+    obs TEXT(140) NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+pdgtech@senacrs.com.br
+
+INSERT INTO tabela001 (id_tabela001, nome, endereco, idade)
+VALUES (NULL, 'William', 'Rua Salvador Franca', 40);            //O NULL, é colocado porque o id_tabela001 está declarado acima entre parenteses 
+
+INSERT INTO tabela02
+(nome_funcionario, endereco, cargo, setor, telefone, idade, data_entrada, obs)
+VALUES
+('Tonho da Lua', 'Venancio Aires 94', 'Tecnico de informatica', 'Suporte', "519999555", 40, 2939393, "tecnico de manutenção de ti do SenacTech"),
+("Chaves da Silva","Venancio Aires 56", "Secretaria", "Recepção", "5199966699", 39, 23939394, "auxiliar de atendimento de clientes");
+
+
+INSERT INTO tabela01 (nome, sobrenome, endereco, idade)
+VALUES
+("Heman","Espada Mágica","Rua Etérnia 77", 200);
+
+
+UPDATE tabela02 SET idade = 41 WHERE id_tabela02=1;
+
+UPDATE tabela02 SET nome_funcionario='Otavio', endereco='rua tanuki 45', idade=41 WHERE id_tabela02=1;
+
+

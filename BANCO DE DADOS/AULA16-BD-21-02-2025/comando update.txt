@@ -1,0 +1,74 @@
+CREATE DATABASE banco008;
+USE banco008;
+
+CREATE TABLE tabela01(
+    id_tabela01 int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) NOT NULL,
+    sobrenome varchar(50) NOT NULL,
+    endereco varchar(100) NOT NULL,
+    idade int(3) NULL
+    )ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+CREATE TABLE tabela02(
+    id_tabela02 int PRIMARY KEY AUTO_INCREMENT,
+    nome_funci varchar(100) NOT NULL,
+    endereco varchar(100) NOT NULL,
+    cargo varchar(50) NOT NULL,
+    setor varchar(50) NOT NULL,
+    telefone varchar(11) NOT NULL,
+    idade int(3) NOT NULL,
+    data_entrada date NOT NULL,
+    obs text(140) NULL
+    )ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+INSERT INTO tabela01
+(nome, sobrenome, endereco, idade)
+VALUES
+('Gilmar','Silva','Venâncio Aires 93',55),
+('Claudio','Souza','Venâncio Aires 93',58),
+('Régis','Costa','Venâncio Aires 93',56);
+
+INSERT INTO tabela02
+(nome_funci,endereco,cargo,setor,telefone,idade,data_entrada,obs)
+VALUES
+('Valdisney Silva','Venâncio Aires 93','Técnico em Informática','Suporte',
+'51999999999',40,20240225,'Técnico na manutenção da TI da empresa'),
+('Clotilde Souza','Venâncio Aires 93','Secretaria','Recepção','519999999',
+30,20240225,'Auxilia no atendimento de clientes');
+
+//COMANDO PARA ATUALIZAR OS DADOS NA TABELA
+UPDATE tabela01 SET idade = 41 WHERE id_tabela01=1;
+
+UPDATE tabela01 SET nome='Gylmar', endereco='Lima e Silva 93', idade=56 
+WHERE id_tabela01=1;
+
+UPDATE tabela01 SET idade=57 WHERE id_tabela01=3;
+
+UPDATE tabela01 SET idade=60 WHERE nome='Régis'
+
+UPDATE tabela02 SET nome_funci='Clotylde Souza Junior', idade=31 
+WHERE id_tabela02=2 OR setor='recepção';
+
+UPDATE tabela02 SET cargo='Milagreiro', setor='Faz tudo' WHERE
+ id_tabela02=4 OR nome_funci='Clotylde Souxa Junior';
+
+UPDATE tabela02 SET cargo='técnico em TI' WHERE id_tabela02 IN (1,2);
+
+
+1
+Gilmar
+Silva
+Venâncio Aires 93
+55
+
+2
+Claudio
+Souza
+Venâncio Aires 93
+58
+
+3
+Régis
+Costa
+Venâncio Aires 93
+56
