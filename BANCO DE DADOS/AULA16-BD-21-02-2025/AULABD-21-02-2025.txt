@@ -29,4 +29,6 @@ UPDATE tabela02 SET idade = 41 WHERE id_tabela02=1;
 
 UPDATE tabela02 SET nome_funcionario='Otavio', endereco='rua tanuki 45', idade=41 WHERE id_tabela02=1;
 
+UPDATE tabela02 SET nome_funcionario="Mafalda", idade=31
+WHERE id_tabela02=2 OR setor="recepção"
 
