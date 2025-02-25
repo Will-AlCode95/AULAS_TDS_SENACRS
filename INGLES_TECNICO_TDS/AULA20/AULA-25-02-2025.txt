@@ -1,0 +1,84 @@
+REDES
+
+'Cloud computing'
+Cloud computing is the delivery of IT services over the internet, 
+on demand, and with pay-as-you-go pricing. 
+It allows users to access computing power, storage, 
+and databases without having to own and maintain physical servers.
+
+
+A computação em nuvem é a entrega de serviços de TI pela Internet, 
+sob demanda e com preços pré-pagos. 
+Ele permite que os usuários acessem poder de computação, 
+armazenamento e bancos de dados sem precisar possuir e manter servidores físicos.
+
+
+Ethernet
+Ethernet é uma tecnologia de rede que permite a conexão de dispositivos em uma rede local (LAN). 
+É um protocolo de comunicação que define como os dispositivos se comunicam entre si. 
+
+
+Ethernet is a networking technology that allows devices to be connected on a local area network (LAN). 
+It is a communication protocol that defines how devices communicate with each other.
+
+
+Wi-fí
+Wi-Fi é uma tecnologia que permite a conexão de dispositivos à internet sem o uso de cabos. 
+É uma abreviação de "Wireless Fidelity
+Wi-Fi is a technology that allows devices to connect to the internet without using cables. 
+It is an abbreviation for "Wireless Fidelity
+
+
+O endereço IP (Internet Protocol address) é um número que identifica um dispositivo conectado à internet. 
+Ele permite que os dispositivos se comuniquem entre si e com servidores
+
+
+The IP address (Internet Protocol address) is a number that identifies a device connected to the internet. 
+It allows devices to communicate with each other and with servers
+
+O endereço IP (Internet Protocol address) é um número que identifica um dispositivo conectado à internet. 
+Ele permite que os dispositivos se comuniquem entre si e com servidores
+
+EXECICIO2
+
+The router is responsible for connecting multiple devices to the internet.
+
+An operating system controls how the computer interacts with its hardware.
+
+If you need more speed, upgrading to an SSD instead of a hard drive is a good option.
+
+A firewall helps protect your network from cyber threats.
+
+Many companies are moving their services to the cloud to reduce costs and improve accessibility.
+
+EXERCICIO3
+
+A website that helps people find and buy clothes online ___sell___
+
+A website where professionals showcase their work ___showcase___
+
+A website that provides educacional content for students ___educate
+
+A website that connects people through social networking ____connect
+
+EXERCICIO4
+
+"You should install an antivirus on your computer." ✅ (Remover "to")
+
+"I suggest that you update your software regularly." ✅ (Corrigir "I suggest you to")
+
+"How about using a stronger password?" ✅ (Remover "to")
+
+"Why don’t you try restarting the router before calling support?" ✅ (Usar gerúndio "restarting")
+
+"You need to check your firewall settings." ✅ (Usar "to check" em vez de "to checking")
+
+"Avoid clicking on unknown links in emails." ✅ (Remover "to")
+
+"Don’t forget to make a backup before formatting your PC." ✅ (Correto)
+
+"Have you considered learning a new programming language?" ✅ (Usar "learning" em vez de "to learning")
+
+"You should avoid using weak passwords." ✅ (Usar "using" em vez de "to use")
+
+"Why don’t you install a VPN for extra security?" ✅ (Correto)

@@ -1,0 +1,79 @@
+EXERCICIO 1
+
+1. I suggest/recommend using a password manager to store your credentials securely.
+
+2. You should using a cloud backup to avoid data loss.
+
+3. don't forget update your antivirus software regularly
+
+4. make sure to check your firewall settings to prevent cyberattacks
+
+5.first you need to use a strong password witch letters, numbers, and symbols
+
+EXERCICIO 2
+
+1.Seu amigo sempre esquece de salvar seus arquivos e perde documentos importantes.
+
+Sugestão: You should save your files frequently to avoid losing important documents.
+Instrução: Make sure to save your files before closing the program.
+
+
+2.Um colega quer proteger melhor seu computador contra vírus.
+
+Sugestão: I suggest installing a reliable antivirus program.
+Instrução: Don’t forget to update your antivirus regularly.
+
+3.Um cliente não sabe como configurar uma conexão segura para sua rede Wi-Fi.
+
+Sugestão: It would be a good idea to use a strong password for your Wi-Fi.
+Instrução: First, you need to change the default router password and enable encryption
+
+
+Exercício 3: Complete as frases com uma sugestão ou instrução apropriada.
+
+Your password is too weak. You should ______to create a strong password_________.
+
+Your computer is slow. It would be a good idea to ___buy a new pc gamer__________.
+
+Your friend keeps forgetting his email password. Why don’t you ___download a password manager_______?
+
+You installed an antivirus, but you never update it. Don’t forget to _____update your software_______.
+
+Your Wi-Fi network is not secure. First, you need to ___download a antivirus_______.
+
+
+
+✏ Exercício 2: Reescreva as frases abaixo transformando-as em sugestões ou instruções.
+
+(Sugestão) Install an antivirus. → I suggest __________.
+
+(Instrução) Change your password. → Make sure to __________.
+
+(Sugestão) Use two-factor authentication. → One option is to __________.
+
+(Instrução) Do not use the same password for all accounts. → Avoid __________.
+
+(Sugestão) Backup your files regularly. → It would be a good idea to __________.
+
+
+3.EXERCICIO
+
+To protect your files, always use a backup as a secondary copy.
+
+A firewall helps prevent unauthorized access to a network.
+
+If your data is encrypted, only authorized users can read it.
+
+Never share your password with others to keep your accounts secure.
+
+A phishing attack tricks users into providing sensitive information.
+
+
+4.Um usuário perdeu arquivos importantes após um problema no computador.
+Recomendação: You should regularly back up your files to avoid data loss.
+
+Seu amigo usa a mesma senha para todos os sites.
+Recomendação: You should use different and strong passwords for each website.
+
+Um cliente recebeu um e-mail suspeito pedindo informações bancárias.
+Recomendação: You should never share personal information via email and always verify the sender.
