@@ -1,0 +1,49 @@
+CREATE TABLE tabela01(
+    id_tabela01 int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) NOT NULL,
+    sobrenome varchar(50) NOT NULL,
+    time_fute varchar(30) NOT NULL,
+    signo varchar(30) NOT NULL,
+    idade int(3) NULL,
+    sexo varchar(10) NOT NULL
+    )ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+CREATE TABLE tabela02(
+    id_tabela02 int PRIMARY KEY AUTO_INCREMENT,
+    nome_carro varchar(50) NOT NULL,
+    marca varchar(30) NOT NULL,
+    modelo varchar(30) NOT NULL,
+    ano int(4) NOT NULL,
+    cor varchar(20) NOT NULL,
+    preco decimal(7,3) NOT NULL
+    )ENGINE=INNODB DEFAULT charset=utf8;
+
+INSERT INTO tabela01
+(nome,sobrenome,time_fute,signo,idade,sexo)
+VALUES
+('Amilton','Silva','Internacional','Libra',25,'Masculino'),
+('Benedito','Souza','Internacional','Peixes',56,'Masculino'),
+('Régis','Costa','Grêmio','peixes',60,'Masculino');
+
+INSERT INTO tabela02
+(nome_carro,marca,modelo,ano,cor,preco)
+VALUES
+('Opala','Chrvrolet','Diplomata',1989,'Azul',60.000),
+('Gol','Volkswagen','GTI',1993,'Vermelho',60.000),
+('Maverick','Ford','GT',1974,'Prata',100.000),
+('Fusca','Volkswagen','Beetle',1960,'Preto',90.000);
+
+DESCRIBE tabela01;
+DESCRIBE tabela02;
+show FIELDS FROM tabela01;
+SHOW FIELDS FROM tabela02;
+
+ALTER TABLE tabela01 DROP idade;
+ALTER TABLE tabela02 DROP cor;
+
+ALTER TABLE tabela01 RENAME TO cadastro;
+
+ALTER TABLE tabela02 RENAME TO veiculo;
+
+RENAME TABLE cadastro TO cliente;
+RENAME TABLE veiculo TO carro;

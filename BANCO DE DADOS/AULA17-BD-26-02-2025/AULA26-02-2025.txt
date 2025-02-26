@@ -1,0 +1,18 @@
+CREATE TABLE tabela02(
+    id_t02 INT PRIMARY KEY AUTO_INCREMENT,
+    nome_videogame VARCHAR(30) NOT NULL,
+    marca VARCHAR(30) NOT NULL,
+    modelo VARCHAR(30) NOT NULL,
+    ano INT(4) NOT NULL,
+    cor VARCHAR(20) NOT NULL,
+    preco DECIMAL(7,3) NOT NULL
+    )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+INSERT INTO tabela01(nome_videogame, marca, modelo, ano, cor, preco)
+VALUES
+('Polistation10', "Sony", "S1000", 2027, "amarelo", 10.000);
+
+DESCRIBE tabela01  
+
+SHOW FIELDS FROM tabela01
+
