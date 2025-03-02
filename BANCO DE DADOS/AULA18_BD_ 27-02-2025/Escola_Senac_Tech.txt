@@ -1,0 +1,200 @@
+CREATE DATABASE senac_tech;
+USE senac_tech;
+
+
+-- Tabela Sala
+CREATE TABLE Sala (
+    cod_sala INT PRIMARY KEY,
+    nome VARCHAR(100),
+    localizacao VARCHAR(255)
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+-- Tabela Cursos
+CREATE TABLE Cursos (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    turno VARCHAR(50),
+    area VARCHAR(100)
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+-- Tabela Matricula
+CREATE TABLE Matricula (
+    num_matri INT PRIMARY KEY,
+    data_matri DATE,
+    curso_id INT,
+    FOREIGN KEY (curso_id) REFERENCES Cursos(id)
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+-- Tabela Aluno
+CREATE TABLE Aluno (
+    num_matri INT PRIMARY KEY,
+    nome VARCHAR(100),
+    genero VARCHAR(20),
+    data_nasci DATE,
+    rua VARCHAR(255),
+    bairro VARCHAR(100),
+    cep VARCHAR(20),
+    cidade VARCHAR(100) 
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+-- Tabela Dependentes
+CREATE TABLE Dependentes (
+    cod_depe INT PRIMARY KEY,
+    nome VARCHAR(100),
+    grau_pare VARCHAR(50),
+    data_nasc DATE,
+    aluno_num_matri INT
+   )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+-- Tabela Disciplina
+CREATE TABLE Disciplina (
+    cod_disc INT PRIMARY KEY,
+    descricao VARCHAR(255),
+    sala_cod_sala INT
+    )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+-- Tabela Docente
+CREATE TABLE Docente (
+    cod_doce INT PRIMARY KEY,
+    nome VARCHAR(100),
+    endereco VARCHAR(255),
+    telefone VARCHAR(20)
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+
+
+
+-- Tabela de Cursos
+ALTER TABLE Cursos (
+    id_curso INT AUTO_INCREMENT PRIMARY KEY,
+    nome_curso VARCHAR(100) NOT NULL,
+    data_inicio DATE NOT NULL,
+    data_fim DATE NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+
+-- Tabela de Disciplina
+ALTER TABLE Disciplina (
+    id_disciplina INT AUTO_INCREMENT PRIMARY KEY,
+    nome_disciplina VARCHAR(100) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+
+-- Adicionar data de início e fim na tabela Cursos
+ALTER TABLE Cursos 
+ADD COLUMN data_inicio DATE,
+ADD COLUMN data_fim DATE;
+
+-- Adicionar nome da disciplina na tabela Disciplina
+ALTER TABLE Disciplina 
+ADD COLUMN nome VARCHAR(100);
+
+-- Adicionar CPF, estado (UF) e telefone na tabela Aluno
+ALTER TABLE Aluno 
+ADD COLUMN cpf VARCHAR(14) UNIQUE,
+ADD COLUMN estado CHAR(2),
+ADD COLUMN telefone VARCHAR(20);
+
+-- Adicionar formação acadêmica na tabela Docente
+ALTER TABLE Docente 
+ADD COLUMN formacao_academica VARCHAR(255);
+
+-- Remover o atributo gênero da tabela Aluno
+ALTER TABLE Aluno 
+DROP COLUMN genero;
+
+
+
+-- Inserir dados na tabela Sala
+INSERT INTO Sala (cod_sala, nome, localizacao) VALUES
+(1, 'Sala 101', 'Bloco A'),
+(2, 'Sala 202', 'Bloco B'),
+(3, 'Sala 303', 'Bloco C'),
+(4, 'Laboratório 1', 'Bloco D'),
+(5, 'Auditório', 'Bloco E');
+
+-- Inserir dados na tabela Cursos
+INSERT INTO Cursos (id, nome, turno, area, data_inicio, data_fim) VALUES
+(1, 'Engenharia de Software', 'Noturno', 'Tecnologia', '2024-03-01', '2028-12-15'),
+(2, 'Administração', 'Matutino', 'Gestão', '2024-02-15', '2028-11-30'),
+(3, 'Enfermagem', 'Integral', 'Saúde', '2024-04-10', '2028-10-20'),
+(4, 'Direito', 'Noturno', 'Humanas', '2024-05-05', '2028-09-25'),
+(5, 'Arquitetura', 'Vespertino', 'Exatas', '2024-06-20', '2028-08-10');
+
+-- Inserir dados na tabela Matricula
+INSERT INTO Matricula (num_matri, data_matri, curso_id) VALUES
+(101, '2024-03-05', 1),
+(102, '2024-03-06', 2),
+(103, '2024-03-07', 3),
+(104, '2024-03-08', 4),
+(105, '2024-03-09', 5);
+
+-- Inserir dados na tabela Aluno
+INSERT INTO Aluno (num_matri, nome, data_nasci, rua, bairro, cep, cidade, estado, telefone, cpf) VALUES
+(101, 'Carlos Silva', '2001-05-10', 'Rua A', 'Centro', '12345-678', 'São Paulo', 'SP', '11987654321', '123.456.789-01'),
+(102, 'Mariana Costa', '2002-08-22', 'Rua B', 'Bela Vista', '54321-876', 'Rio de Janeiro', 'RJ', '21976543210', '987.654.321-02'),
+(103, 'Roberto Lima', '2000-12-30', 'Rua C', 'Vila Nova', '67890-123', 'Belo Horizonte', 'MG', '31965432109', '321.987.654-03'),
+(104, 'Ana Souza', '1999-07-15', 'Rua D', 'Boa Vista', '13579-246', 'Curitiba', 'PR', '41987654321', '654.321.987-04'),
+(105, 'Fernanda Alves', '2003-02-05', 'Rua E', 'Centro', '24680-135', 'Porto Alegre', 'RS', '51987654321', '789.123.456-05');
+
+-- Inserir dados na tabela Dependentes
+INSERT INTO Dependentes (cod_depe, nome, grau_pare, data_nasc, aluno_num_matri) VALUES
+(1, 'Lucas Silva', 'Irmão', '2010-06-12', 101),
+(2, 'Beatriz Costa', 'Filha', '2015-09-23', 102),
+(3, 'Rafael Lima', 'Sobrinho', '2012-11-14', 103),
+(4, 'Sofia Souza', 'Prima', '2008-05-29', 104),
+(5, 'Gabriel Alves', 'Irmão', '2011-03-07', 105);
+
+-- Inserir dados na tabela Disciplina
+INSERT INTO Disciplina (cod_disc, nome, descricao, sala_cod_sala) VALUES
+(1, 'Banco de Dados', 'Estudo de SGBDs e modelagem', 1),
+(2, 'Gestão Empresarial', 'Fundamentos da Administração', 2),
+(3, 'Anatomia Humana', 'Estudo do corpo humano', 3),
+(4, 'Direito Constitucional', 'Leis e princípios fundamentais', 4),
+(5, 'Desenho Arquitetônico', 'Técnicas de projeção', 5);
+
+-- Inserir dados na tabela Docente
+INSERT INTO Docente (cod_doce, nome, endereco, telefone, formacao_academica) VALUES
+(1, 'Professor João', 'Rua X, 123', '11999999999', 'Doutor em Ciência da Computação'),
+(2, 'Dra. Camila', 'Rua Y, 456', '21988888888', 'Mestre em Administração'),
+(3, 'Dr. Ricardo', 'Rua Z, 789', '31977777777', 'Doutor em Medicina'),
+(4, 'Dra. Fernanda', 'Rua W, 321', '41966666666', 'Mestre em Direito'),
+(5, 'Professor Pedro', 'Rua V, 654', '51955555555', 'Doutor em Arquitetura');
+
+
+
+UPDATE Aluno 
+SET telefone = '11912345678' 
+WHERE num_matri = 101;  -- Altere o número de matrícula conforme necessário
+
+UPDATE Docente 
+SET endereco = 'Avenida Nova, 456' 
+WHERE cod_doce = 2;  -- Altere o código do docente conforme necessário
+
+-- Atualizar o nome de um curso
+UPDATE Cursos 
+SET nome = 'Engenharia de Computação' 
+WHERE id = 1;  -- Altere o ID do curso conforme necessário
+
+-- Atualizar a descrição de uma disciplina
+UPDATE Disciplina 
+SET descricao = 'Estudo avançado de bancos de dados relacionais e não relacionais' 
+WHERE cod_disc = 1;  -- Altere o código da disciplina conforme necessário
+
+
+
+ALTER DATABASE escola_senac_tech RENAME TO Universidade_senac_tech; (NÃO CONSEGUI RENOMEAR O NOME DO BD POR CÓDIGO, SOMENTE PELA INTERFACE =l 
+
+-- Renomear a tabela SALA para LABORATORIO
+ALTER TABLE Sala RENAME TO Laboratorio;
+
+-- Renomear a tabela DISCIPLINA para UC
+ALTER TABLE Disciplina RENAME TO UC;
+
+-- Renomear a tabela DOCENTE para PROFESSOR
+ALTER TABLE Docente RENAME TO Professor;
+
+-- Renomear a tabela ALUNO para CLIENTE
+ALTER TABLE Aluno RENAME TO Cliente;
+
+
