@@ -14,5 +14,8 @@ VALUES
 
 DESCRIBE tabela01  
 
-SHOW FIELDS FROM tabela01
+SHOW FIELDS FROM tabela01  //O comando SHOW FIELDS FROM em SQL é utilizado para exibir informações sobre as colunas (campos) de uma tabela no banco de dados
 
+ALTER TABLE tabela01 RENAME TO cadastro;
+
+RENAME TABLE tabela01 RENAME TO cadastro;
