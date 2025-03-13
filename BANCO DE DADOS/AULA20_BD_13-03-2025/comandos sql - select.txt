@@ -1,0 +1,62 @@
+CREATE DATABASE senac_veiculos;
+USE senac_veiculos;
+
+CREATE TABLE cliente(
+    id_cliente int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) NOT NULL,
+    sobrenome varchar(50) NOT NULL,
+    endereco varchar(50) NOT NULL,
+    bairro varchar(50) NOT NULL,
+    cidade varchar(50) NOT NULL,
+    uf char(2) NOT NULL,
+    telefone bigint(11) NOT NULL,
+    cpf varchar(11) UNIQUE NOT NULL,
+    data_nasc date NOT NULL,
+    idade int(3) NULL,
+    sexo varchar(10) NOT NULL
+    )ENGINE=INNODB DEFAULT charset=utf8;
+
+CREATE TABLE carro(
+    id_carro int PRIMARY KEY AUTO_INCREMENT,
+    nome_carro varchar(30) NOT NULL,
+    marca varchar(30) NOT NULL,
+    modelo varchar(30) NOT NULL,
+    ano int(4) NOT NULL,
+    cor varchar(20) NOT NULL,
+    preco decimal(7,3) NOT NULL
+    )ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+INSERT INTO cliente
+(nome,sobrenome,endereco,bairro,cidade,uf,telefone,cpf,data_nasc,idade,sexo)
+VALUES
+('Valdisney','Dysnei','Miquei mause 99','Azenha','Porto Alegre',
+'RS',51222222222,'77777777777',19901023,33,'Masculino'),
+('Patinhas','Pato','Lima e Silva 77','Cidade Baixa','Porto Alegre','RS',
+51333333333,'66666666666',20001220,43,'Masculino'),
+('Alerquina','Coringa','Andradas 20','Centro','Porto Alegre','RS',51444444444,
+'88888888888',20001112,23,'Feminino'),
+('Moa','Capirota','Rua da praia 60','Canasvieira','Florianópolis','SC',
+48555555555,'55555555555',20101120,25,'Feminino');
+
+
+INSERT INTO carro
+(nome_carro,marca,modelo,ano,cor,preco)
+VALUES
+('Opala','Chevrolet','Diplomata',1989,'Azul', 50.000),
+('Gol','Volkswagen','GTI',1993,'Vermelho',60.000),
+('Maverick','Ford','GT',1974,'Prata',100.000),
+('Fusca','Volkswagen','Beetle',1960,'Preto',90.000);
+
+
+SELECT * FROM cliente WHERE id_cliente = 2
+SELECT * FROM `cliente` WHERE nome = 'Moa'
+SELECT * FROM `carro` WHERE cor = 'Azul'
+SELECT * FROM `carro` WHERE nome_carro = 'Gol' 
+AND cor = 'Vermelho'
+SELECT * FROM `carro` WHERE nome_carro = 'Fusca' 
+AND ano < 1980
+
+SELECT * FROM `carro` WHERE nome_carro = 'Fusca' 
+AND ano < 1980
+
+SELECT * FROM `cliente` WHERE data_nasc < 20001022
