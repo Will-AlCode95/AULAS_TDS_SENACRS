@@ -1,0 +1,283 @@
+Parte1
+
+-- Criar o banco de dados
+CREATE DATABASE escola_tecnica;
+USE escola_tecnica;
+
+-- Tabela de Cursos
+CREATE TABLE cursos (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    turno VARCHAR(20) NOT NULL,
+    area VARCHAR(50) NOT NULL
+);
+
+-- Tabela de Aluno
+CREATE TABLE aluno (
+    num_matri INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_nasci DATE NOT NULL,
+    genero CHAR(1),
+    rua VARCHAR(100),
+    cep VARCHAR(10),
+    bairro VARCHAR(50),
+    cidade VARCHAR(50),
+    curso_id INT,
+    FOREIGN KEY (curso_id) REFERENCES cursos(id)
+);
+
+-- Tabela de Matrícula (para registrar a data da matrícula)
+CREATE TABLE matricula (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    aluno_id INT NOT NULL,
+    curso_id INT NOT NULL,
+    data_matri DATE NOT NULL,
+    FOREIGN KEY (aluno_id) REFERENCES aluno(num_matri),
+    FOREIGN KEY (curso_id) REFERENCES cursos(id),
+    UNIQUE (aluno_id) -- Garante que cada aluno só pode ter uma matrícula
+);
+
+-- Tabela de Sala
+CREATE TABLE sala (
+    cod_sala INT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    localizacao VARCHAR(100) NOT NULL
+);
+
+-- Tabela de Docente (Professor)
+CREATE TABLE docente (
+    cod_doce INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(200) NOT NULL
+);
+
+-- Tabela de Telefones do Professor (um professor pode ter vários telefones)
+CREATE TABLE telefone_docente (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    docente_id INT NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    FOREIGN KEY (docente_id) REFERENCES docente(cod_doce)
+);
+
+-- Tabela de Dependentes do Professor
+CREATE TABLE dependentes (
+    cod_depe INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_nasc DATE,
+    grau_parentesco VARCHAR(50),
+    docente_id INT NOT NULL,
+    FOREIGN KEY (docente_id) REFERENCES docente(cod_doce)
+);
+
+-- Tabela de Disciplina
+CREATE TABLE disciplina (
+    cod_disc INT PRIMARY KEY,
+    descricao VARCHAR(200) NOT NULL,
+    sala_id INT NOT NULL,
+    FOREIGN KEY (sala_id) REFERENCES sala(cod_sala),
+    UNIQUE (sala_id) -- Garante que cada disciplina ocupa uma única sala
+);
+
+-- Tabela de relação entre Aluno e Disciplina (muitos para muitos)
+CREATE TABLE aluno_disciplina (
+    aluno_id INT,
+    disciplina_id INT,
+    PRIMARY KEY (aluno_id, disciplina_id),
+    FOREIGN KEY (aluno_id) REFERENCES aluno(num_matri),
+    FOREIGN KEY (disciplina_id) REFERENCES disciplina(cod_disc)
+);
+
+-- Tabela de relação entre Docente e Disciplina (muitos para muitos)
+CREATE TABLE docente_disciplina (
+    docente_id INT,
+    disciplina_id INT,
+    PRIMARY KEY (docente_id, disciplina_id),
+    FOREIGN KEY (docente_id) REFERENCES docente(cod_doce),
+    FOREIGN KEY (disciplina_id) REFERENCES disciplina(cod_disc)
+);
+
+
+Parte 2
+
+
+-- 1. Inserir dados na tabela cursos
+INSERT INTO cursos (id, nome, turno, area) VALUES
+(1, 'Engenharia de Software', 'Manhã', 'Tecnologia'),
+(2, 'Administração', 'Noite', 'Negócios'),
+(3, 'Medicina', 'Integral', 'Saúde'),
+(4, 'Direito', 'Noite', 'Humanas'),
+(5, 'Ciência da Computação', 'Tarde', 'Tecnologia');
+
+-- 2. Inserir dados na tabela sala
+INSERT INTO sala (cod_sala, nome, localizacao) VALUES
+(101, 'Laboratório de Informática', 'Bloco A - Térreo'),
+(102, 'Sala de Aula 1', 'Bloco B - 1º Andar'),
+(103, 'Auditório', 'Bloco C - Térreo'),
+(104, 'Laboratório de Anatomia', 'Bloco D - 2º Andar'),
+(105, 'Sala de Estudos', 'Biblioteca - 3º Andar');
+
+-- 3. Inserir dados na tabela docente
+INSERT INTO docente (cod_doce, nome, endereco) VALUES
+(1001, 'Ana Silva', 'Rua das Flores, 123 - Centro'),
+(1002, 'Carlos Oliveira', 'Av. Principal, 456 - Jardins'),
+(1003, 'Maria Santos', 'Rua do Comércio, 789 - Vila Nova'),
+(1004, 'João Pereira', 'Av. Brasil, 321 - Centro'),
+(1005, 'Fernanda Lima', 'Rua das Palmeiras, 654 - Parque Verde');
+
+-- 4. Inserir dados na tabela telefone_docente
+INSERT INTO telefone_docente (docente_id, telefone) VALUES
+(1001, '(11) 98765-4321'),
+(1001, '(11) 3456-7890'),
+(1002, '(11) 97654-3210'),
+(1003, '(11) 91234-5678'),
+(1004, '(11) 99876-5432');
+
+-- 5. Inserir dados na tabela dependentes
+INSERT INTO dependentes (cod_depe, nome, data_nasc, grau_parentesco, docente_id) VALUES
+(501, 'Miguel Silva', '2015-03-12', 'Filho', 1001),
+(502, 'Beatriz Oliveira', '2017-07-25', 'Filha', 1002),
+(503, 'Lucas Santos', '2010-11-30', 'Filho', 1003),
+(504, 'Sophia Pereira', '2016-05-18', 'Filha', 1004),
+(505, 'Pedro Lima', '2014-09-22', 'Filho', 1005);
+
+-- 6. Inserir dados na tabela disciplina
+INSERT INTO disciplina (cod_disc, descricao, sala_id) VALUES
+(2001, 'Programação Orientada a Objetos', 101),
+(2002, 'Gestão Empresarial', 102),
+(2003, 'Anatomia Humana', 104),
+(2004, 'Direito Constitucional', 103),
+(2005, 'Estrutura de Dados', 105);
+
+-- 7. Inserir dados na tabela aluno
+INSERT INTO aluno (num_matri, nome, data_nasci, genero, rua, cep, bairro, cidade, curso_id) VALUES
+(10001, 'Rafael Mendes', '2000-06-15', 'M', 'Rua dos Estudantes, 100', '01234-567', 'Centro', 'São Paulo', 1),
+(10002, 'Juliana Costa', '2001-04-22', 'F', 'Av. das Universidades, 200', '02345-678', 'Pinheiros', 'São Paulo', 2),
+(10003, 'Bruno Almeida', '1999-11-10', 'M', 'Rua Doutor Silva, 300', '03456-789', 'Saúde', 'São Paulo', 3),
+(10004, 'Carolina Souza', '2002-02-28', 'F', 'Av. Paulista, 400', '04567-890', 'Bela Vista', 'São Paulo', 4),
+(10005, 'Daniel Ferreira', '2000-09-17', 'M', 'Rua da Tecnologia, 500', '05678-901', 'Vila Mariana', 'São Paulo', 5);
+
+-- 8. Inserir dados na tabela matricula
+INSERT INTO matricula (aluno_id, curso_id, data_matri) VALUES
+(10001, 1, '2022-02-10'),
+(10002, 2, '2022-02-11'),
+(10003, 3, '2022-02-09'),
+(10004, 4, '2022-02-12'),
+(10005, 5, '2022-02-08');
+
+-- 9. Inserir dados na tabela aluno_disciplina (relação entre alunos e disciplinas)
+INSERT INTO aluno_disciplina (aluno_id, disciplina_id) VALUES
+(10001, 2001), -- Rafael cursa Programação OO
+(10001, 2005), -- Rafael cursa Estrutura de Dados
+(10002, 2002), -- Juliana cursa Gestão Empresarial
+(10003, 2003), -- Bruno cursa Anatomia Humana
+(10004, 2004); -- Carolina cursa Direito Constitucional
+
+-- 10. Inserir dados na tabela docente_disciplina (relação entre professores e disciplinas)
+INSERT INTO docente_disciplina (docente_id, disciplina_id) VALUES
+(1001, 2001), -- Ana Silva leciona Programação OO
+(1002, 2002), -- Carlos Oliveira leciona Gestão Empresarial
+(1003, 2003), -- Maria Santos leciona Anatomia Humana
+(1004, 2004), -- João Pereira leciona Direito Constitucional
+(1005, 2005); -- Fernanda Lima leciona Estrutura de Dados
+
+
+
+
+Parte 3
+
+
+-- 1. Consulta para mostrar alunos e seus respectivos cursos
+SELECT 
+    a.nome AS 'Nome do Aluno',
+    a.data_nasci AS 'Data de Nascimento',
+    a.genero AS 'Gênero',
+    c.nome AS 'Curso',
+    c.turno AS 'Turno',
+    c.area AS 'Área do Conhecimento',
+    m.data_matri AS 'Data de Matrícula'
+FROM aluno a
+JOIN cursos c ON a.curso_id = c.id
+JOIN matricula m ON a.num_matri = m.aluno_id
+ORDER BY a.nome;
+
+-- 2. Consulta para mostrar disciplinas e seus respectivos professores
+SELECT 
+    d.descricao AS 'Disciplina',
+    doc.nome AS 'Professor',
+    doc.endereco AS 'Endereço do Professor',
+    s.nome AS 'Sala',
+    s.localizacao AS 'Localização da Sala'
+FROM disciplina d
+JOIN docente_disciplina dd ON d.cod_disc = dd.disciplina_id
+JOIN docente doc ON dd.docente_id = doc.cod_doce
+JOIN sala s ON d.sala_id = s.cod_sala
+ORDER BY d.descricao;
+
+-- 3. Consulta para mostrar alunos e as disciplinas que estão cursando
+SELECT 
+    a.nome AS 'Nome do Aluno',
+    c.nome AS 'Curso',
+    d.descricao AS 'Disciplina',
+    s.nome AS 'Sala',
+    s.localizacao AS 'Localização'
+FROM aluno a
+JOIN aluno_disciplina ad ON a.num_matri = ad.aluno_id
+JOIN disciplina d ON ad.disciplina_id = d.cod_disc
+JOIN cursos c ON a.curso_id = c.id
+JOIN sala s ON d.sala_id = s.cod_sala
+ORDER BY a.nome, d.descricao;
+
+-- 4. Consulta para mostrar professores e seus dependentes
+SELECT 
+    doc.nome AS 'Professor',
+    dep.nome AS 'Dependente',
+    dep.data_nasc AS 'Data de Nascimento',
+    dep.grau_parentesco AS 'Parentesco'
+FROM docente doc
+LEFT JOIN dependentes dep ON doc.cod_doce = dep.docente_id
+ORDER BY doc.nome, dep.nome;
+
+-- 5. Consulta para mostrar professores e seus telefones
+SELECT 
+    doc.nome AS 'Professor',
+    tel.telefone AS 'Telefone'
+FROM docente doc
+LEFT JOIN telefone_docente tel ON doc.cod_doce = tel.docente_id
+ORDER BY doc.nome;
+
+-- 6. Consulta para mostrar a carga de trabalho dos professores (quantas disciplinas cada um leciona)
+SELECT 
+    doc.nome AS 'Professor',
+    COUNT(dd.disciplina_id) AS 'Quantidade de Disciplinas',
+    GROUP_CONCAT(d.descricao SEPARATOR ', ') AS 'Disciplinas Lecionadas'
+FROM docente doc
+LEFT JOIN docente_disciplina dd ON doc.cod_doce = dd.docente_id
+LEFT JOIN disciplina d ON dd.disciplina_id = d.cod_disc
+GROUP BY doc.nome
+ORDER BY COUNT(dd.disciplina_id) DESC;
+
+-- 7. Consulta para mostrar quantos alunos estão matriculados em cada disciplina
+SELECT 
+    d.descricao AS 'Disciplina',
+    COUNT(ad.aluno_id) AS 'Quantidade de Alunos',
+    s.nome AS 'Sala',
+    doc.nome AS 'Professor'
+FROM disciplina d
+LEFT JOIN aluno_disciplina ad ON d.cod_disc = ad.disciplina_id
+LEFT JOIN sala s ON d.sala_id = s.cod_sala
+LEFT JOIN docente_disciplina dd ON d.cod_disc = dd.disciplina_id
+LEFT JOIN docente doc ON dd.docente_id = doc.cod_doce
+GROUP BY d.descricao, s.nome, doc.nome
+ORDER BY COUNT(ad.aluno_id) DESC;
+
+-- 8. Consulta para mostrar alunos e seus dados completos com curso
+SELECT 
+    a.nome AS 'Nome do Aluno',
+    a.data_nasci AS 'Data de Nascimento',
+    a.genero AS 'Gênero',
+    CONCAT(a.rua, ', ', a.bairro, ', ', a.cidade, ' - CEP: ', a.cep) AS 'Endereço Completo',
+    c.nome AS 'Curso',
+    c.turno AS 'Turno'
+FROM aluno a
+JOIN cursos c ON a.curso_id = c.id
+ORDER BY a.nome;
