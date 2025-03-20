@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2025 at 04:06 PM
+-- Generation Time: Mar 20, 2025 at 04:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,6 +38,17 @@ CREATE TABLE `aluno` (
   `curso_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `aluno`
+--
+
+INSERT INTO `aluno` (`num_matri`, `nome`, `data_nasci`, `rua`, `cep`, `bairro`, `cidade`, `curso_id`) VALUES
+(10001, 'Maria Silva', '2000-05-15', 'Rua das Flores', '12345-678', 'Centro', 'São Paulo', 1),
+(10002, 'João Santos', '2001-07-22', 'Av. Principal', '23456-789', 'Jardim', 'Rio de Janeiro', 2),
+(10003, 'Ana Oliveira', '1999-03-10', 'Rua dos Pinheiros', '34567-890', 'Pinheiros', 'São Paulo', 3),
+(10004, 'Pedro Costa', '2002-01-30', 'Rua das Palmeiras', '45678-901', 'Tijuca', 'Rio de Janeiro', 4),
+(10005, 'Juliana Lima', '2001-11-18', 'Av. Paulista', '56789-012', 'Bela Vista', 'São Paulo', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +60,17 @@ CREATE TABLE `aluno_disciplina` (
   `disciplina_id` int(11) NOT NULL,
   `periodo` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `aluno_disciplina`
+--
+
+INSERT INTO `aluno_disciplina` (`aluno_id`, `disciplina_id`, `periodo`) VALUES
+(10001, 201, '2023.1'),
+(10002, 202, '2023.1'),
+(10003, 203, '2023.1'),
+(10004, 204, '2023.1'),
+(10005, 205, '2023.1');
 
 -- --------------------------------------------------------
 
@@ -62,6 +84,17 @@ CREATE TABLE `cursos` (
   `turno` varchar(20) NOT NULL,
   `area` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cursos`
+--
+
+INSERT INTO `cursos` (`id`, `nome`, `turno`, `area`) VALUES
+(1, 'Técnico em Informática', 'Matutino', 'Tecnologia'),
+(2, 'Técnico em Administração', 'Vespertino', 'Negócios'),
+(3, 'Técnico em Enfermagem', 'Noturno', 'Saúde'),
+(4, 'Técnico em Eletrônica', 'Matutino', 'Engenharia'),
+(5, 'Técnico em Logística', 'Noturno', 'Negócios');
 
 -- --------------------------------------------------------
 
@@ -77,6 +110,17 @@ CREATE TABLE `dependentes` (
   `docente_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `dependentes`
+--
+
+INSERT INTO `dependentes` (`cod_depe`, `nome`, `data_nasc`, `grau_parentesco`, `docente_id`) VALUES
+(701, 'Sofia Ferreira', '2015-04-18', 'Filha', 501),
+(702, 'Miguel Alves', '2017-08-25', 'Filho', 502),
+(703, 'Laura Pereira', '2014-11-12', 'Filha', 503),
+(704, 'Mateus Mendes', '2016-02-28', 'Filho', 504),
+(705, 'Isabela Barbosa', '2018-07-15', 'Filha', 505);
+
 -- --------------------------------------------------------
 
 --
@@ -87,6 +131,17 @@ CREATE TABLE `disciplina` (
   `cod_disc` int(11) NOT NULL,
   `descricao` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `disciplina`
+--
+
+INSERT INTO `disciplina` (`cod_disc`, `descricao`) VALUES
+(201, 'Programação Orientada a Objetos'),
+(202, 'Gestão Empresarial'),
+(203, 'Anatomia e Fisiologia'),
+(204, 'Circuitos Eletrônicos'),
+(205, 'Gestão de Estoque');
 
 -- --------------------------------------------------------
 
@@ -100,6 +155,17 @@ CREATE TABLE `docente` (
   `endereco` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `docente`
+--
+
+INSERT INTO `docente` (`cod_doce`, `nome`, `endereco`) VALUES
+(501, 'Carlos Ferreira', 'Av. Brasil, 1500, Apto 302, São Paulo'),
+(502, 'Mariana Alves', 'Rua das Acácias, 45, Rio de Janeiro'),
+(503, 'Roberto Pereira', 'Av. Amazonas, 721, Belo Horizonte'),
+(504, 'Patrícia Mendes', 'Rua Ipiranga, 890, São Paulo'),
+(505, 'Lucas Barbosa', 'Av. Atlântica, 2300, Rio de Janeiro');
+
 -- --------------------------------------------------------
 
 --
@@ -110,6 +176,17 @@ CREATE TABLE `docente_disciplina` (
   `docente_id` int(11) NOT NULL,
   `disciplina_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `docente_disciplina`
+--
+
+INSERT INTO `docente_disciplina` (`docente_id`, `disciplina_id`) VALUES
+(501, 201),
+(502, 202),
+(503, 203),
+(504, 204),
+(505, 205);
 
 -- --------------------------------------------------------
 
@@ -124,6 +201,17 @@ CREATE TABLE `matricula` (
   `data_matri` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `matricula`
+--
+
+INSERT INTO `matricula` (`id`, `aluno_id`, `curso_id`, `data_matri`) VALUES
+(1, 10001, 1, '2023-02-10'),
+(2, 10002, 2, '2023-02-12'),
+(3, 10003, 3, '2023-02-15'),
+(4, 10004, 4, '2023-02-18'),
+(5, 10005, 5, '2023-02-20');
+
 -- --------------------------------------------------------
 
 --
@@ -135,6 +223,17 @@ CREATE TABLE `sala` (
   `nome` varchar(50) NOT NULL,
   `localizacao` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sala`
+--
+
+INSERT INTO `sala` (`cod_sala`, `nome`, `localizacao`) VALUES
+(101, 'Laboratório de Informática', 'Bloco A - Térreo'),
+(102, 'Sala de Administração', 'Bloco B - 1º andar'),
+(103, 'Laboratório de Enfermagem', 'Bloco C - Térreo'),
+(104, 'Laboratório de Eletrônica', 'Bloco D - 2º andar'),
+(105, 'Sala de Logística', 'Bloco B - 2º andar');
 
 -- --------------------------------------------------------
 
@@ -149,6 +248,17 @@ CREATE TABLE `sala_disciplina` (
   `horario` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `sala_disciplina`
+--
+
+INSERT INTO `sala_disciplina` (`id`, `sala_id`, `disciplina_id`, `horario`) VALUES
+(1, 101, 201, 'Seg 08:00-10:00'),
+(2, 102, 202, 'Ter 14:00-16:00'),
+(3, 103, 203, 'Qua 19:00-21:00'),
+(4, 104, 204, 'Qui 08:00-10:00'),
+(5, 105, 205, 'Sex 19:00-21:00');
+
 -- --------------------------------------------------------
 
 --
@@ -161,6 +271,17 @@ CREATE TABLE `telefone_aluno` (
   `telefone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `telefone_aluno`
+--
+
+INSERT INTO `telefone_aluno` (`id`, `aluno_id`, `telefone`) VALUES
+(1, 10001, '(11) 91234-5678'),
+(2, 10002, '(21) 92345-6789'),
+(3, 10003, '(11) 93456-7890'),
+(4, 10004, '(21) 94567-8901'),
+(5, 10005, '(11) 95678-9012');
+
 -- --------------------------------------------------------
 
 --
@@ -172,6 +293,17 @@ CREATE TABLE `telefone_docente` (
   `docente_id` int(11) NOT NULL,
   `telefone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `telefone_docente`
+--
+
+INSERT INTO `telefone_docente` (`id`, `docente_id`, `telefone`) VALUES
+(1, 501, '(11) 98765-4321'),
+(2, 502, '(21) 97654-3210'),
+(3, 503, '(31) 96543-2109'),
+(4, 504, '(11) 95432-1098'),
+(5, 505, '(21) 94321-0987');
 
 --
 -- Indexes for dumped tables
@@ -267,25 +399,25 @@ ALTER TABLE `telefone_docente`
 -- AUTO_INCREMENT for table `matricula`
 --
 ALTER TABLE `matricula`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sala_disciplina`
 --
 ALTER TABLE `sala_disciplina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `telefone_aluno`
 --
 ALTER TABLE `telefone_aluno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `telefone_docente`
 --
 ALTER TABLE `telefone_docente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
