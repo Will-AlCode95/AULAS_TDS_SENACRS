@@ -1,0 +1,68 @@
+CREATE DATABASE tcheuber; 
+USE tcheuber; 
+
+CREATE TABLE pessoa ( 
+	id_pessoa  int PRIMARY KEY AUTO_INCREMENT, 
+	nome_completo varchar(50) NOT NULL,	
+	endereco varchar(50) NOT NULL,
+	cidade varchar(50) NOT NULL,
+	uf char(2) NOT NULL,
+	cpf varchar(11) NOT NULL,
+	celular varchar(11) NOT NULL,
+	email varchar(50) NOT NULL	
+	)ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+CREATE TABLE motorista ( 
+	id_motorista  int PRIMARY KEY AUTO_INCREMENT, 
+	categoria char(3) NOT NULL,
+	num_carteira varchar(11) NOT NULL,
+	cod_pessoa int NOT NULL,
+	FOREIGN KEY (cod_pessoa) REFERENCES pessoa (id_pessoa)	
+	)ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+CREATE TABLE mecanico ( 
+	id_mecanico  int PRIMARY KEY AUTO_INCREMENT,
+	especializacao varchar (50) NOT NULL, 
+	cod_pessoa int NOT NULL,
+	FOREIGN KEY (cod_pessoa) REFERENCES pessoa (id_pessoa)	
+	)ENGINE=INNODB DEFAULT CHARSET=UTF8; 
+
+CREATE TABLE veiculo ( 
+	id_veiculo  int PRIMARY KEY AUTO_INCREMENT, 
+	cod_motorista int NOT NULL,
+	marca varchar(30) NOT NULL,
+	modelo varchar(30) NOT NULL,
+	cor varchar(30) NOT NULL,
+	placa varchar(10) NOT NULL,
+	ano_fabri int(4) NOT NULL,
+	num_chassi varchar(20) NOT NULL,
+	FOREIGN KEY (cod_motorista) REFERENCES motorista (id_motorista)	
+	)ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+CREATE TABLE solicita_servico ( 
+	id_sol_servico  int PRIMARY KEY AUTO_INCREMENT, 
+	data_soli date NOT NULL,
+	data_proble date NOT NULL,
+	cod_veiculo int NOT NULL,
+	cod_motorista int NOT NULL,
+	descricao text(140) NOT NULL,
+	FOREIGN KEY (cod_veiculo) REFERENCES veiculo (id_veiculo),	
+	FOREIGN KEY (cod_motorista) REFERENCES motorista (id_motorista)	
+	)ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+CREATE TABLE realiza_servico ( 
+	id_rea_servico  int PRIMARY KEY AUTO_INCREMENT, 
+	data_inicio date NOT NULL,
+	data_entrega date NOT NULL,
+	cod_servico int NOT NULL,
+	cod_mecanico int NOT NULL,
+	descricao text(140) NOT NULL,
+	FOREIGN KEY (cod_servico) REFERENCES solicita_servico (id_sol_servico),	
+	FOREIGN KEY (cod_mecanico) REFERENCES mecanico (id_mecanico)	
+	)ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+
+
+
+
+
