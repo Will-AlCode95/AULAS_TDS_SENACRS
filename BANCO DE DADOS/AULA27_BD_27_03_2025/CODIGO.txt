@@ -1,0 +1,62 @@
+-- Tabela Aeroporto
+CREATE TABLE aeroporto (
+    id_aeroporto INT PRIMARY KEY AUTO_INCREMENT,
+    lotacao INT NOT NULL,
+    peso_max DECIMAL(10,2) NOT NULL
+);
+
+-- Tabela Companhia
+CREATE TABLE companhia (
+    id_companhia INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL
+);
+
+-- Tabela Modelo
+CREATE TABLE modelo (
+    id_modelo INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    lotacao INT NOT NULL,
+    combustivel VARCHAR(50) NOT NULL,
+    peso DECIMAL(10,2) NOT NULL
+);
+
+-- Tabela Avião
+CREATE TABLE aviao (
+    id_aviao INT PRIMARY KEY AUTO_INCREMENT,
+    prefixo VARCHAR(20) NOT NULL,
+    modelo_id INT NOT NULL,
+    companhia_id INT NOT NULL,
+    observacoes TEXT,
+    FOREIGN KEY (modelo_id) REFERENCES modelo(id_modelo),
+    FOREIGN KEY (companhia_id) REFERENCES companhia(id_companhia)
+);
+
+-- Tabela Voo
+CREATE TABLE voo (
+    id_voo INT PRIMARY KEY AUTO_INCREMENT,
+    horario_partida DATETIME NOT NULL,
+    horario_chegada DATETIME NOT NULL,
+    aviao_id INT NOT NULL,
+    companhia_id INT NOT NULL,
+    FOREIGN KEY (aviao_id) REFERENCES aviao(id_aviao),
+    FOREIGN KEY (companhia_id) REFERENCES companhia(id_companhia)
+);
+
+-- Tabela Empregado
+CREATE TABLE empregado (
+    id_empregado INT PRIMARY KEY AUTO_INCREMENT,
+    codigo VARCHAR(50) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(200),
+    cidade VARCHAR(100),
+    estado VARCHAR(50),
+    email VARCHAR(100) UNIQUE
+);
+
+-- Tabela Técnico
+CREATE TABLE tecnico (
+    id_tecnico INT PRIMARY KEY AUTO_INCREMENT,
+    codigo VARCHAR(50) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE
+);
