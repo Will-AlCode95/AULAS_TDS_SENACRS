@@ -1,0 +1,95 @@
+CREATE TABLE Motorista (
+    ID_Motorista INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Categoria_CNH VARCHAR(5) NOT NULL,
+    Numero_CNH VARCHAR(20) UNIQUE NOT NULL,
+    CPF VARCHAR(14) UNIQUE NOT NULL,
+    Endereco VARCHAR(200) NOT NULL,
+    Cidade VARCHAR(100) NOT NULL,
+    Estado CHAR(2) NOT NULL,
+    Celular VARCHAR(15) NOT NULL,
+    Data_Cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE Veiculo (
+    ID_Veiculo INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Motorista INT NOT NULL,
+    Marca VARCHAR(50) NOT NULL,
+    Modelo VARCHAR(50) NOT NULL,
+    Placa VARCHAR(10) UNIQUE NOT NULL,
+    Ano_Fabricacao YEAR NOT NULL,
+    Chassi VARCHAR(20) UNIQUE NOT NULL,
+    Cor VARCHAR(20) NOT NULL,
+    FOREIGN KEY (ID_Motorista) REFERENCES Motorista(ID_Motorista) ON DELETE CASCADE
+);
+
+
+CREATE TABLE Mecanico (
+    ID_Mecanico INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    CPF VARCHAR(14) UNIQUE NOT NULL,
+    Endereco VARCHAR(200) NOT NULL,
+    Cidade VARCHAR(100) NOT NULL,
+    Estado CHAR(2) NOT NULL,
+    Celular VARCHAR(15) NOT NULL
+);
+
+
+-- Melhoria: Adicionado Status para acompanhar a ordem de serviço.
+CREATE TABLE OrdemServico (
+    ID_Ordem INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Motorista INT NOT NULL,
+    ID_Veiculo INT NOT NULL,
+    ID_Mecanico INT NOT NULL,
+    Data_Solicitacao DATE NOT NULL,
+    Data_Problema DATE NOT NULL,
+    Descricao_Problema TEXT NOT NULL,
+    Status ENUM('Pendente', 'Em andamento', 'Finalizado') DEFAULT 'Pendente',
+    FOREIGN KEY (ID_Motorista) REFERENCES Motorista(ID_Motorista) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Veiculo) REFERENCES Veiculo(ID_Veiculo) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Mecanico) REFERENCES Mecanico(ID_Mecanico) ON DELETE SET NULL
+);
+
+
+--Melhoria: Agora cada OS pode ter várias manutenções registradas.
+CREATE TABLE Manutencao (
+    ID_Manutencao INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Ordem INT NOT NULL,
+    Data_Execucao DATE NOT NULL,
+    Descricao TEXT NOT NULL,
+    Custo DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (ID_Ordem) REFERENCES OrdemServico(ID_Ordem) ON DELETE CASCADE
+);
+
+
+--Tabela de Logs de Alterações, Melhoria: Agora todas as alterações no banco são registradas. 
+CREATE TABLE Logs (
+    ID_Log INT AUTO_INCREMENT PRIMARY KEY,
+    Tabela_Afetada VARCHAR(50) NOT NULL,
+    Acao VARCHAR(20) NOT NULL,
+    Data_Acao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Usuario VARCHAR(50) NOT NULL
+);
+
+--índices para acelerar buscas e melhorar JOINs.Melhoria: Consultas mais rápidas!
+CREATE INDEX idx_motorista_cpf ON Motorista (CPF);
+CREATE INDEX idx_veiculo_placa ON Veiculo (Placa);
+CREATE INDEX idx_os_status ON OrdemServico (Status);
+
+
+INSERT INTO Veiculo (ID_Motorista, Marca, Modelo, Placa, Ano_Fabricacao, Chassi, Cor) VALUES (1, 'Volkswagen', 'Gol', 'ASW1250', 2020, '9BWHE21JX24060960', 'Preto'), (2, 'Fiat', 'Uno', 'DEF5678', 2019, '9BD15822AD6837319', 'Branco'), (3, 'Chevrolet', 'Onix', 'GHI9012', 2021, '9BGKS48L0FG142352', 'Vermelho'), (4, 'Fiat', 'Argo', 'JKL3456', 2019, '9BD358A4MLYL85623', 'Vermelho'), (5, 'Volkswagen', 'Golf', 'ABC1270', 2021, '9BWHE21JX24067893', 'Preto');
+
+
+PERDI O CÓDIGO DA ORDEM DE SERVIÇO =/
+
+
+INSERT INTO Manutencao (ID_Ordem, Data_Execucao, Descricao, Custo)
+VALUES 
+(1, '2025-03-17', 'Troca de pastilhas e fluido de freio. Sangria do sistema.', 220.00),
+(2, '2025-03-12', 'Diagnóstico eletrônico, limpeza dos injetores e ajuste da mistura ar-combustível.', 310.50),
+(2, '2025-03-13', 'Substituição do filtro de combustível e verificação do sistema de ignição.', 145.75),
+(3, '2025-03-01', 'Recarga de gás, limpeza do evaporador e substituição do filtro de cabine.', 285.00),
+(5, '2025-03-07', 'Manutenção completa: troca de óleos e filtros, verificação de correias e fluidos.', 350.25);
+
+
