@@ -37,7 +37,7 @@ CREATE TABLE voo (
     horario_partida DATETIME NOT NULL,
     horario_chegada DATETIME NOT NULL,
     aviao_id INT NOT NULL,
-    companhia_id INT NOT NULL,
+    id_companhia INT NOT NULL,
     FOREIGN KEY (aviao_id) REFERENCES aviao(id_aviao),
     FOREIGN KEY (companhia_id) REFERENCES companhia(id_companhia)
 );
@@ -60,3 +60,64 @@ CREATE TABLE tecnico (
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE
 );
+
+
+INSERT INTO companhia (nome) VALUES
+('LATAM'),
+('Gol Linhas Aéreas'),
+('Azul'),
+('Avianca'),
+('American Airlines');
+
+
+INSERT INTO modelo (nome, lotacao, combustivel, peso) VALUES
+('Boeing 737', 189, 'Querosene de aviação', 41413),
+('Airbus A320', 180, 'Querosene de aviação', 42200),
+('Embraer E195', 132, 'Querosene de aviação', 50690),
+('Boeing 777', 396, 'Querosene de aviação', 347450),
+('Airbus A380', 850, 'Querosene de aviação', 560000);
+
+
+INSERT INTO voo (horario_partida, horario_chegada, id_aviao, id_companhia) VALUES
+('2025-03-28 08:00:00', '2025-03-28 12:30:00', 1, 2),
+('2025-03-28 14:15:00', '2025-03-28 18:45:00', 2, 1),
+('2025-03-29 06:30:00', '2025-03-29 11:00:00', 3, 3),
+('2025-03-29 19:00:00', '2025-03-30 00:15:00', 4, 5),
+('2025-03-30 10:45:00', '2025-03-30 15:20:00', 5, 1);
+
+
+INSERT INTO aviao (prefixo, id_modelo, id_companhia, observacoes) VALUES
+('PR-GTG', 1, 2, 'Manutenção recente'),
+('PT-MXC', 2, 1, 'Novo na frota'),
+('PS-AEA', 3, 3, 'Em operação constante'),
+('N-AA123', 4, 5, 'Voo internacional'),
+('PT-MXA', 5, 1, 'Reservado para voos longos');
+
+
+INSERT INTO tecnico (codigo, nome, email) VALUES
+(101, 'Carlos Henrique', 'carlos.henrique@email.com'),
+(102, 'Mariana Souza', 'mariana.souza@email.com'),
+(103, 'Roberto Lima', 'roberto.lima@email.com'),
+(104, 'Fernanda Alves', 'fernanda.alves@email.com'),
+(105, 'João Pedro', 'joao.pedro@email.com');
+
+
+INSERT INTO aeroporto (lotacao, peso_max) VALUES
+(500, 200000),
+(700, 300000),
+(450, 150000),
+(800, 350000),
+(600, 250000);
+
+
+SELECT 
+    v.horario_partida AS Horario_da_Partida, 
+    v.horario_chegada AS Horario_da_Chegada, 
+    c.nome AS Companhia_Aerea, 
+    m.nome AS Modelo_Aeronave,
+    a.prefixo AS Prefixo_Aeronave
+FROM voo v
+JOIN companhia c ON v.id_companhia = c.id_companhia
+JOIN aviao a ON v.id_aviao = a.id_aviao
+JOIN modelo m ON a.modelo_id = m.id_modelo;
+
