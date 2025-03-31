@@ -1,0 +1,11 @@
+Router → (c) a device that directs internet traffic between networks.
+
+Modem → (e) connects a local network to the internet.
+
+Switch → (d) allows multiple devices within a network to communicate.
+
+CCTV → (b) a security camera system that monitors and records activity.
+
+Repeater → (f) boosts the signal of a wireless network to cover a larger area.
+
+Gateway → (a) connects two different network types and translates data between them.

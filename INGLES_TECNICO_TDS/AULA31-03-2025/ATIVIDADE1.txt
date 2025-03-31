@@ -1,0 +1,13 @@
+ByteTech Solutions (Small Office - 10 employees)
+
+Recommended network: LAN (Local Area Network)
+
+Justification: Since it's a small office with a few employees working primarily on-site, a LAN is sufficient to provide a fast and secure connection for internal collaboration.
+
+GlobalData Corp (Multinational Corporation - Offices in 10 countries)
+
+Recommended network: WAN (Wide Area Network) + VPN (Virtual Private Network)
+
+Justification: Since the company has offices in multiple countries, a WAN allows connectivity between these locations. Additionally, a VPN ensures security for internal communications.
+
+

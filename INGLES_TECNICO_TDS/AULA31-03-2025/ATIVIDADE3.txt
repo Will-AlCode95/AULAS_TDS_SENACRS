@@ -1,0 +1,37 @@
+Repetidor (Repeater):
+É um dispositivo que recebe sinais fracos ou de baixo nível e os retransmite a uma potência ou nível mais alto, superando o efeito de atenuação do sinal em longas distâncias. Basicamente, amplia o alcance de uma rede sem alterar os dados.
+
+Bridge (Ponte):
+Conecta segmentos de rede semelhantes usando o mesmo protocolo. A bridge opera na camada de enlace (camada 2 do modelo OSI) e usa endereços MAC para determinar se os dados devem ou não passar de um segmento para outro, reduzindo o tráfego desnecessário entre segmentos.
+
+Roteador (Router):
+Conecta diferentes redes e direciona pacotes de dados entre elas. Opera na camada de rede (camada 3 do modelo OSI), usando endereços IP e tabelas de roteamento para determinar o melhor caminho para enviar os dados.
+
+Gateway:
+Serve como ponto de entrada/saída entre redes que usam protocolos diferentes. Atua como "tradutor" entre sistemas diferentes, permitindo a comunicação entre redes incompatíveis. Pode operar em múltiplas camadas do modelo OSI.
+
+Hub:
+Dispositivo simples que conecta vários dispositivos em uma rede. Quando recebe dados de um dispositivo, replica e envia para todas as portas, independentemente do destinatário pretendido. É considerado menos eficiente que switches modernos por causa dessa transmissão indiscriminada.
+
+Ponto de Acesso Sem Fio (Wireless Access Point):
+Dispositivo que permite que equipamentos sem fio se conectem a uma rede com fio usando Wi-Fi. Funciona como uma ponte entre dispositivos sem fio e a rede com fio, possibilitando que vários dispositivos sem fio se conectem à rede.
+Cada um desses dispositivos desempenha um papel específico na construção e funcionamento de redes de computadores, melhorando a conectividade, o alcance e a comunicação entre diferentes dispositivos e redes.Tentar novamenteBagora em inglesEditarI'll explain each of these network devices in English:
+
+Repeater:
+A device that receives weak or low-level signals and retransmits them at a higher power or level, overcoming the effect of signal attenuation over long distances. Basically, it extends the range of a network without altering the data.
+
+Bridge:
+Connects similar network segments using the same protocol. The bridge operates at the data link layer (layer 2 of the OSI model) and uses MAC addresses to determine whether data should pass from one segment to another, reducing unnecessary traffic between segments.
+
+Router:
+Connects different networks and directs data packets between them. It operates at the network layer (layer 3 of the OSI model), using IP addresses and routing tables to determine the best path to send data.
+
+Gateway:
+Serves as an entry/exit point between networks that use different protocols. Acts as a "translator" between different systems, allowing communication between incompatible networks. It can operate at multiple layers of the OSI model.
+
+Hub:
+A simple device that connects multiple devices in a network. When it receives data from one device, it replicates and sends it to all ports, regardless of the intended recipient. It's considered less efficient than modern switches because of this indiscriminate transmission.
+
+Wireless Access Point:
+A device that allows wireless equipment to connect to a wired network using Wi-Fi. It functions as a bridge between wireless devices and the wired network, enabling multiple wireless devices to connect to the network.
+Each of these devices plays a specific role in building and operating computer networks, improving connectivity, range, and communication between different devices and networks.
