@@ -1,0 +1,36 @@
+Como funciona
+O computador do usuário liga-se a um provedor de internet através de um número de telefone 
+O modem do computador converte os sinais analógicos em digitais e vice-versa 
+O modem codifica e decodifica pacotes de protocolo da internet em sinais sonoros 
+que podem ser transmitidos pela linha telefônica. 
+
+Vantagens e desvantagens
+Era uma das principais formas de conexão à internet até o início dos anos 2000 
+É uma opção mais barata, mas também mais lenta, de acesso à internet 
+Ocupa a linha telefônica, impedindo que se fizesse ou recebesse ligações 
+enquanto se usava a internet. 
+
+
+
+How it works
+The user's computer connects to an internet provider a telephone number
+The computer's modem converts analog signals into digital signals and vice versa
+The modem encodes and decodes internet protocol packets into sound signals
+that can be transmitted for the telephone line.
+
+Advantages and disadvantages
+It was one the main ways to connect to the internet until the early 2000s
+It is a cheaper, but also slower, option for accessing the internet
+It takes up the telephone line, preventing calls from made or received
+while using the internet.
+
+
+
+Diferenças:
+A internet discada (dial-up) e a internet atual diferem significativamente em velocidade, 
+estabilidade e capacidade, com a internet atual sendo muito mais rápida e confiável, 
+além de não ocupar a linha telefônica. 
+
+Dial-up internet and the current internet differ in speed, 
+stability and capacity, with the current internet much faster and more reliable, 
+and not ocupped the telephone line.
