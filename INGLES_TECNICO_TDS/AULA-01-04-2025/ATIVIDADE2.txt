@@ -1,4 +1,4 @@
-Como funciona
+Como funciona:
 O computador do usuário liga-se a um provedor de internet através de um número de telefone 
 O modem do computador converte os sinais analógicos em digitais e vice-versa 
 O modem codifica e decodifica pacotes de protocolo da internet em sinais sonoros 
@@ -12,7 +12,7 @@ enquanto se usava a internet.
 
 
 
-How it works
+How it works:
 The user's computer connects to an internet provider a telephone number
 The computer's modem converts analog signals into digital signals and vice versa
 The modem encodes and decodes internet protocol packets into sound signals
