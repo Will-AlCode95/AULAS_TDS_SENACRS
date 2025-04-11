@@ -89,3 +89,7 @@ Aula 11
 Aula 12
 
 - [Exercícios](exercicios-seq-cod-eventos.md)
+
+Aula 13
+
+- [Loops](loops.md)
