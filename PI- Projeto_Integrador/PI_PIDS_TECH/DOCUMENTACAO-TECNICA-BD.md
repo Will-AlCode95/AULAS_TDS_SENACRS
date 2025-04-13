@@ -60,3 +60,14 @@ LEFT JOIN pessoa p1 ON t.id_doador = p1.id_pessoa
 LEFT JOIN pessoa p2 ON t.id_destinatario = p2.id_pessoa
 LEFT JOIN componente_periferico c ON t.id_componente = c.id_componente
 ORDER BY t.data_transferencia DESC;
+```
+---
+
+## ✒️Considerações Finais
+
+Esse modelo busca manter a consistência dos dados através de:
+Chaves primárias e estrangeiras bem definidas.
+Enumerações para padronizar status e tipos.
+Índices para otimizar buscas em campos críticos.
+Este banco de dados é uma base sólida para o desenvolvimento de sistemas de gestão de doações e controle de inventário no contexto educacional e social promovido pelo PIDS Tech.
+
