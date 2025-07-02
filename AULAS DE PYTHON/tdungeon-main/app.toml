@@ -1,0 +1,2 @@
+[app.Dungeon]
+command = "python dungeon.py"
