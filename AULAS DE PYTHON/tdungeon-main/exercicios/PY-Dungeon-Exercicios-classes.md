@@ -14,3 +14,5 @@
 
 5. **Classe com herança**  
    Implemente uma classe `PortaSecreta` que herda de `Porta` e adiciona um método `revelar()` que imprime "Uma porta secreta foi revelada!".
+
+
