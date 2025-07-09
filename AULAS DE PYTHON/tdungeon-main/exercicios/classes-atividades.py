@@ -47,22 +47,29 @@ caçador.coletar()
 
 
 
-class Cofre():
-    def __init__ (self, senha=5050):
-      self.__senha = str(senha)
+#class Cofre():
+#    def __init__ (self, senha=5050):
+#      self.__senha = str(senha)
 
-    def verif_senha(self, senha_digi):
-          return str(senha_digi) == self.__senha
+#    def verif_senha(self, senha_digi):
+#          return str(senha_digi) == self.__senha
 
-cofre = Cofre(5050)
-verif = input("digite a senha:")
+#cofre = Cofre(5050)
+#verif = input("digite a senha:")
 
-if cofre.verif_senha(verif):
-    print("Acesso Alowed")
-else:
-    print("wrong password")
+#if cofre.verif_senha(verif):
+#    print("Acesso Alowed")
+#else:
+#    print("wrong password")
 
 #5. **Classe com herança**  
 #   Implemente uma classe `PortaSecreta` que herda de `Porta` e adiciona um método `revelar()` que imprime "Uma porta secreta foi revelada!".
 
 
+class PortaSecreta():
+    def __init__(self):
+        pass
+    
+    def revelar(self):
+        print("Uma porta secreta foi revelada")
+        
