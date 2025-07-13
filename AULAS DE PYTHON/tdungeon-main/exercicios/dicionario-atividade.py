@@ -25,9 +25,21 @@ print("O Dano do", personagem["nome"], "é",
       personagem["dano"], "e a sua porteção é de: ")
 
 personagem["proteção"] = 2
-del personagem["nome"]
+# del personagem["nome"]
 
 print(personagem)
 
 for chave, valor in personagem.items():
     print(f"{chave}: {valor}")
+
+inventario = {
+    "tonho": {"ataque": 10, "defesa": 5, "armadura": 2},
+
+    "irineu": {"ataque": 15, "defesa": 10, "armadura": 5}
+}
+
+print("o poder dele é:", inventario["irineu"]["defesa"])
+
+
+for chave, valor in inventario.items():
+    print(f"  {chave}: {valor}")
