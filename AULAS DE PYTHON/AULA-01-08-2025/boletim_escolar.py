@@ -3,7 +3,7 @@ turma = input("Nome da Turma: ")
 curso = input("Nome do Curso: ")
 matricula = input("numero da matricula: ")
 print()
-nota1 = float(input("Digite a primeira nota: "))
+nota1 = float(input("Digite a primeira nota: "))  #adicionei float em todos pois estava dando erro no #calcular media
 nota2 = float(input("Digite a segunda nota: "))
 nota3 = float(input("Digite a terceira nota: "))
 nota4 = float(input("Digite a quarta nota: "))
@@ -23,7 +23,7 @@ print(f"4ª Avaliação: {nota4}")
 print(f"5ª Avaliação: {nota5}")
 print("-----------------------------")
 
-# Caucula a média
+# Caucularr a média
 media = (nota1+nota2+nota3+nota4+nota5) / 5
 print()
 print(f"Média Final: {media}%")
