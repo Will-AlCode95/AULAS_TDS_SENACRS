@@ -66,36 +66,3 @@ while ((novoCliente == "S") or (novoCliente == "s")):
        print ("5- Cartão de crédito 3x - acréscimo de 10%")
        print ("6- Cartão de crédito 4x - acréscimo de 15%")
        print()
-
-while
-    pag = input("Escolha uma das opções acima: ")                                                                    
-    if ((pag < 1) or (pag > 6))                                   
-      print("Você escolheu uma opção errada!")                       
-      sn = input("Deseja tentar escolher uma forma de pagamento novamente? (S/N): ")                                                                     
-else:                                                                    
-      sn = "N"                                                                                          
-while ((pag >= 1) or (pag <= 6)) or ((sn = "N") or (sn = "n"))              
-if ((sn = "N") or (sn = "n")) and ((pag < 1) or (pag > 6)) entao        
-   print("Compra cancelada.")                                     
-senao
-   escolha pag
-      caso 1
-         pagamento <- total - (total * 0.10)
-         formaPagamento <- "À vista em dinheiro ou PIX - 10% de desconto"
-      caso 2
-         pagamento <- total - (total * 0.05)
-         formaPagamento <- "Cartão de débito - 5% de desconto"
-      caso 3
-         pagamento <- total
-         formaPagamento <- "Cartão de crédito 1x - mesmo preço"
-      caso 4
-         pagamento <- total + (total * 0.05)
-         formaPagamento <- "Cartão de crédito 2x - acréscimo de 5%"
-      caso 5
-         pagamento <- total + (total * 0.10)
-         formaPagamento <- "Cartão de crédito 3x - acréscimo de 10%"
-      caso 6
-         pagamento <- total + (total * 0.15)
-         formaPagamento <- "Cartão de crédito 4x - acréscimo de 15%"
-   fimescolha
-
