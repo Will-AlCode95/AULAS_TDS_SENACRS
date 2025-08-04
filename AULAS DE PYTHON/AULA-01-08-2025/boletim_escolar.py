@@ -32,8 +32,12 @@ print("Situação Curricular: ")
 print()
 
 if media >= 7:
+    print("***************************")
     print("*********APROVADO**********")
+    print("***************************")
 elif media >= 5:
     print("********RECUPERAÇÃO*********")
 else:
+    print("************  **************")
     print("********REPROVADO***********")
+    print("********    *   ************")
