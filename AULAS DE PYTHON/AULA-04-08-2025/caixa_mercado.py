@@ -22,7 +22,9 @@ while ((novoCliente == "S") or (novoCliente == "s")):
        print("[2] Feijão (1kg) R$ 7,50")
        print("[3] Leite (1L) R$ 4,00")
        print("[4] Café (500g) R$ 6,00")
-       opcao = int(input("Selecione uma das opções: "))
+       opcao = input("Selecione uma das opções: ")
+       opcao = int(opcao)
+       
 
        #// Verificação da opção selecionada
        if (opcao < 1) or (opcao > 4):
@@ -52,17 +54,52 @@ while ((novoCliente == "S") or (novoCliente == "s")):
           print("Subtotal desta compra: R$ ", subtotal)
           print("Valor total acumulado no carrinho: R$ ", total)
           print("=========================================")
-          input("Deseja adicionar mais produtos ao carrinho? (S/N): ")       
+          sn = input("Deseja adicionar mais produtos ao carrinho? (S/N): ")       
 
-       print("==============================================")
-       print("Quantidade total de itens no carrinho: ", quanttotal, " unidades.")
-       print("Valor total da sua compra R$ ", total)
-       print ("     FORMAS DE PAGAMENTO    ")
-       print()
-       print("1- À vista em dinheiro ou PIX - 10% de desconto")
-       print ("2- Cartão de débito - 5% de desconto")
-       print ("3- Cartão de crédito 1x - mesmo preço")
-       print ("4- Cartão de crédito 2x - acréscimo de 5%")
-       print ("5- Cartão de crédito 3x - acréscimo de 10%")
-       print ("6- Cartão de crédito 4x - acréscimo de 15%")
-       print()
+    sn = input("Deseja adicionar mais produtos ao carrinho? (S/N): ")    
+    print("==============================================")
+    print("Quantidade total de itens no carrinho: ", quanttotal, " unidades.")
+    print("Valor total da sua compra R$ ", total)
+    print()
+    print ("     FORMAS DE PAGAMENTO    ")
+    print("1- À vista em dinheiro ou PIX - 10% de desconto")
+    print ("2- Cartão de débito - 5% de desconto")
+    print ("3- Cartão de crédito 1x - mesmo preço")
+    print ("4- Cartão de crédito 2x - acréscimo de 5%")
+    print ("5- Cartão de crédito 3x - acréscimo de 10%")
+    print ("6- Cartão de crédito 4x - acréscimo de 15%")
+    print()  
+
+while
+    pag = input("Escolha uma das opções acima: ")                                                                    
+    if (int = (pag < 1) or (pag > 6))                                   
+      print("Você escolheu uma opção errada!")                       
+      sn = input("Deseja tentar escolher uma forma de pagamento novamente? (S/N): ")                                                                     
+else:                                                                    
+      sn = "N"                                                                                          
+
+while ((pag >= 1) and (pag <= 6)) or ((sn == "N") or (sn == "n"))              
+
+     if ((sn == "N") or (sn == "n")) or ((pag < 1) or (pag > 6))       
+        print("Compra cancelada.")                                     
+     else:
+        match pag:
+           case 1:
+            pagamento = total - (total * 0.10)
+            formaPagamento = "À vista em dinheiro ou PIX - 10% de desconto"
+           case 2:
+            pagamento = total - (total * 0.05)
+            formaPagamento = "Cartão de débito - 5% de desconto"
+           case 3:
+            pagamento = total
+            formaPagamento = "Cartão de crédito 1x - mesmo preço"
+           case 4:
+            pagamento = total + (total * 0.05)
+            formaPagamento = "Cartão de crédito 2x - acréscimo de 5%"
+           case 5:
+            pagamento = total + (total * 0.10)
+            formaPagamento = "Cartão de crédito 3x - acréscimo de 10%"
+           case 6:
+            pagamento = total + (total * 0.15)
+            formaPagamento = "Cartão de crédito 4x - acréscimo de 15%"
+
