@@ -80,7 +80,7 @@ else:
 
 while ((pag >= 1) and (pag <= 6)) or ((sn == "N") or (sn == "n"))              
 
-     if ((sn == "N") or (sn == "n")) or ((pag < 1) or (pag > 6))       
+     if ((sn == "N") or (sn == "n")) or ((pag < 1) or (pag > 6))     
         print("Compra cancelada.")                                     
      else:
         match pag:
@@ -103,3 +103,19 @@ while ((pag >= 1) and (pag <= 6)) or ((sn == "N") or (sn == "n"))
             pagamento = total + (total * 0.15)
             formaPagamento = "Cartão de crédito 4x - acréscimo de 15%"
 
+
+   #// Atualiza o total arrecadado no dia
+   totalArrecadadoDia = totalArrecadadoDia + pagamento
+
+print("=================CHECKOUT==================")
+print("Forma de pagamento: ", formaPagamento)
+print("Quantidade total de produtos comprados: ", quanttotal, " unidades.")
+print("Valor total da sua compra R$ ", pagamento)
+
+print("Deseja atender um novo cliente? (S/N): ")
+
+#// Fechamento do sistema ao final do dia
+print("===============FECHAMENTO DO DIA=================")
+print("Total de itens vendidos no dia: ", totalItensVendidos, " unidades.")
+print("Valor total arrecadado no dia: R$ ", totalArrecadadoDia)
+print("===========================================")
