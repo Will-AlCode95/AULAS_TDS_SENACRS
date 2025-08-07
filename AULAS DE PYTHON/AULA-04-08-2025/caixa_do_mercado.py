@@ -1,5 +1,5 @@
-#Inicio
-#// Inicializações
+# Inicio
+# // Inicializações
 totalArrecadadoDia = 0
 totalItensVendidos = 0
 novoCliente = "S"
@@ -9,114 +9,116 @@ total = 0
 sn = "s"
 
 while ((novoCliente == "S") or (novoCliente == "s")):
-    #// Inicializar total do cliente
+    # // Inicializar total do cliente
     total = 0
     quanttotal = 0
     produto = 0
     sn = "s"  # Reinicia para permitir adicionar produtos
     print("=================MERCADO DO WILL=================")
 
-    #// Loop de adição de produtos ao carrinho
+    # // Loop de adição de produtos ao carrinho
     while ((sn == "S") or (sn == "s")):
-       print("===============MENU DE PRODUTOS==============")
-       print("[1] Arroz (1kg) R$ 5,00")
-       print("[2] Feijão (1kg) R$ 7,50")
-       print("[3] Leite (1L) R$ 4,00")
-       print("[4] Café (500g) R$ 6,00")
-       opcao = input("Selecione uma das opções: ")
-       opcao = int(opcao)
-       
+        print("===============MENU DE PRODUTOS==============")
+        print("[1] Arroz (1kg) R$ 5,00")
+        print("[2] Feijão (1kg) R$ 7,50")
+        print("[3] Leite (1L) R$ 4,00")
+        print("[4] Café (500g) R$ 6,00")
+        opcao = input("Selecione uma das opções: ")
+        opcao = int(opcao)
 
-       #// Verificação da opção selecionada
-       if (opcao < 1) or (opcao > 4):
-          print("Você escolheu uma opção inválida!")
-       else:
-          quantidade = int(input("Quantos produtos você deseja adicionar: "))
-          quanttotal = quanttotal + quantidade
-          totalItensVendidos = totalItensVendidos + quantidade  #// Soma dos itens no dia
+        # // Verificação da opção selecionada
+        if (opcao < 1) or (opcao > 4):
+            print("Você escolheu uma opção inválida!")
+        else:
+            quantidade = int(input("Quantos produtos você deseja adicionar: "))
+            quanttotal = quanttotal + quantidade
+            totalItensVendidos = totalItensVendidos + \
+                quantidade  # // Soma dos itens no dia
 
-          match opcao:
-             case 1:
-                subtotal = quantidade * 5.00
-                produto = "Arroz (1kg)"
-             case 2:
-                subtotal = quantidade * 7.50
-                produto = "Feijão (1kg)"
-             case 3:
-                subtotal = quantidade * 4.00
-                produto = "Leite (1L)"
-             case 4:
-                subtotal = quantidade * 6.00
-                produto = "Café (500g)"
+            match opcao:
+                case 1:
+                    subtotal = quantidade * 5.00
+                    produto = "Arroz (1kg)"
+                case 2:
+                    subtotal = quantidade * 7.50
+                    produto = "Feijão (1kg)"
+                case 3:
+                    subtotal = quantidade * 4.00
+                    produto = "Leite (1L)"
+                case 4:
+                    subtotal = quantidade * 6.00
+                    produto = "Café (500g)"
 
-          total = total + subtotal
-          print("=========================================")
-          print("Você adicionou ", quantidade, " unidade(s) de ", produto)
-          print("Subtotal desta compra: R$ ", subtotal)
-          print("Valor total acumulado no carrinho: R$ ", total)
-          print("=========================================")
-          sn = input("Deseja adicionar mais produtos ao carrinho? (S/N): ")       
+            total = total + subtotal
+            print("=========================================")
+            print("Você adicionou ", quantidade, " unidade(s) de ", produto)
+            print("Subtotal desta compra: R$ ", subtotal)
+            print("Valor total acumulado no carrinho: R$ ", total)
+            print("=========================================")
+            sn = input("Deseja adicionar mais produtos ao carrinho? (S/N): ")
 
     print("==============================================")
     print("Quantidade total de itens no carrinho: ", quanttotal, " unidades.")
     print("Valor total da sua compra R$ ", total)
     print()
-    print ("     FORMAS DE PAGAMENTO    ")
+    print("     FORMAS DE PAGAMENTO    ")
     print("1- À vista em dinheiro ou PIX - 10% de desconto")
-    print ("2- Cartão de débito - 5% de desconto")
-    print ("3- Cartão de crédito 1x - mesmo preço")
-    print ("4- Cartão de crédito 2x - acréscimo de 5%")
-    print ("5- Cartão de crédito 3x - acréscimo de 10%")
-    print ("6- Cartão de crédito 4x - acréscimo de 15%")
-    print()  
+    print("2- Cartão de débito - 5% de desconto")
+    print("3- Cartão de crédito 1x - mesmo preço")
+    print("4- Cartão de crédito 2x - acréscimo de 5%")
+    print("5- Cartão de crédito 3x - acréscimo de 10%")
+    print("6- Cartão de crédito 4x - acréscimo de 15%")
+    print()
 
     # Loop para validar forma de pagamento
     pagamentoValido = False
     while not pagamentoValido:
         pag = input("Escolha uma das opções acima: ")
         pag = int(pag)
-        
-        if (pag < 1) or (pag > 6):                                   
-            print("Você escolheu uma opção errada!")                       
-            continuar = input("Deseja tentar escolher uma forma de pagamento novamente? (S/N): ")
+
+        if (pag < 1) or (pag > 6):
+            print("Você escolheu uma opção errada!")
+            continuar = input(
+                "Deseja tentar escolher uma forma de pagamento novamente? (S/N): ")
             if (continuar == "N") or (continuar == "n"):
                 print("Compra cancelada.")
                 break
         else:
             pagamentoValido = True
-            
-            match pag:
-               case 1:
-                pagamento = total - (total * 0.10)
-                formaPagamento = "À vista em dinheiro ou PIX - 10% de desconto"
-               case 2:
-                pagamento = total - (total * 0.05)
-                formaPagamento = "Cartão de débito - 5% de desconto"
-               case 3:
-                pagamento = total
-                formaPagamento = "Cartão de crédito 1x - mesmo preço"
-               case 4:
-                pagamento = total + (total * 0.05)
-                formaPagamento = "Cartão de crédito 2x - acréscimo de 5%"
-               case 5:
-                pagamento = total + (total * 0.10)
-                formaPagamento = "Cartão de crédito 3x - acréscimo de 10%"
-               case 6:
-                pagamento = total + (total * 0.15)
-                formaPagamento = "Cartão de crédito 4x - acréscimo de 15%"
 
-            #// Atualiza o total arrecadado no dia
+            match pag:
+                case 1:
+                    pagamento = total - (total * 0.10)
+                    formaPagamento = "À vista em dinheiro ou PIX - 10% de desconto"
+                case 2:
+                    pagamento = total - (total * 0.05)
+                    formaPagamento = "Cartão de débito - 5% de desconto"
+                case 3:
+                    pagamento = total
+                    formaPagamento = "Cartão de crédito 1x - mesmo preço"
+                case 4:
+                    pagamento = total + (total * 0.05)
+                    formaPagamento = "Cartão de crédito 2x - acréscimo de 5%"
+                case 5:
+                    pagamento = total + (total * 0.10)
+                    formaPagamento = "Cartão de crédito 3x - acréscimo de 10%"
+                case 6:
+                    pagamento = total + (total * 0.15)
+                    formaPagamento = "Cartão de crédito 4x - acréscimo de 15%"
+
+            # // Atualiza o total arrecadado no dia
             totalArrecadadoDia = totalArrecadadoDia + pagamento
 
             print("=================CHECKOUT==================")
             print("Forma de pagamento: ", formaPagamento)
-            print("Quantidade total de produtos comprados: ", quanttotal, " unidades.")
+            print("Quantidade total de produtos comprados: ",
+                  quanttotal, " unidades.")
             print("Valor total da sua compra R$ ", pagamento)
             print("============================================")
 
     novoCliente = input("Deseja atender um novo cliente? (S/N): ")
 
-#// Fechamento do sistema ao final do dia
+# // Fechamento do sistema ao final do dia
 print("===============FECHAMENTO DO DIA=================")
 print("Total de itens vendidos no dia: ", totalItensVendidos, " unidades.")
 print("Valor total arrecadado no dia: R$ ", totalArrecadadoDia)
