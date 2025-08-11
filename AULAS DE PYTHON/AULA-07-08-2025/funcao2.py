@@ -8,8 +8,8 @@ def obter_desconto():
         else:
             print("voce não tem desconto")
   
-    return idade
+    return idade, nome
 
 
 meu_desc = obter_desconto()
-print(f"Você tem {meu_desc} anos")
+print(f"{nome}Você tem {meu_desc} anos")
